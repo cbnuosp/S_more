@@ -19,11 +19,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Challenge"
-            android:textColor="#000000"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:textSize="35sp" />
+            android:text="Challenge"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
         <!--챌린지 추가 버튼-->
 
@@ -34,15 +35,15 @@
 
         <ImageButton
             android:id="@+id/add_c_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/outline_add_box_24"
-            android:contentDescription="add_c_list"
-            tools:ignore="HardcodedText"
-            android:background="#00FFFFFF"
-            android:stateListAnimator="@null"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
-            android:layout_marginTop="25dp" />
+            android:background="#00FFFFFF"
+            android:contentDescription="add_c_list"
+            android:src="@drawable/baseline_playlist_add_24"
+            android:stateListAnimator="@null"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 
@@ -58,10 +59,13 @@
             android:background="#000000"
             android:layout_marginTop="10dp" />
 
+
     </LinearLayout>
 
-    <!--챌린지 프로그래스바 db에서 불러오기-->
-
 </LinearLayout>
-    <!--프로그래스 바 클릭시 해당 세부 창으로 이동 frag3_2-->
-    <!--추가 버튼 클릭시 추가 창으로 이동 frag3_1-->
+
+
+
+<!--챌린지 프로그래스바 db에서 불러오기-->
+<!--프로그래스 바 클릭시 해당 세부 창으로 이동 frag3_2-->
+<!--프로그래스 바 왼쪽에 챌린지 제목, 오른쪽에 진행률 표시-->
