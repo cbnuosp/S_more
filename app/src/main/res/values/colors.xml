@@ -10,4 +10,9 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorPink">#EF9D9D</color>
     <color name="t_color">#5B4BEB</color>
+    <color name="colorfrag2">#ffb6b9</color>
+    <color name="colorfrag2_dark">#ff9999</color>
+    <color name="colorfrag2_list">#F7F7F7</color>
+    <color name="colorfrag2_list_dark">#E8E8E8</color>
+
 </resources>

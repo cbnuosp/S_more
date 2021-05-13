@@ -1,12 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="2번화면입니다."
-        android:textSize="40sp"/>
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/courseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorfrag2"
+            android:text="강의 목록"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/scheduleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorfrag2"
+            android:text="시간표"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/statisticsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorfrag2"
+            android:text="통계"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    // 각각의 버튼 클릭시 화면 전환
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        // 기본적으로 LinearLayout, 초반 공지사항 출력
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/notice">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:background="@color/colorfrag2"
+                android:layout_marginTop="8dp">
+
+                <ImageButton
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitCenter"
+                    android:background="#00FFFFFF"
+                    android:src="@drawable/logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="공지사항"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/moticeListView"
+                android:layout_margin="10dp"
+                android:dividerHeight="10dp"
+                android:divider="#FFFFFF"></ListView>
+
+        </LinearLayout>
+
+        // 버튼 클릭 시 LinearLayout 삭제, RelativeLayout 보임, button 클릭시 Frag 출력
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragment">
+
+        </RelativeLayout>
+    </FrameLayout>
 
 </LinearLayout>
