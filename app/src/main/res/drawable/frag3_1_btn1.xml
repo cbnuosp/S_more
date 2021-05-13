@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid android:color="#F4F0ED" /> //배경색
+
+    <stroke
+        android:width="2dp"
+        android:color="#000000" /> //선색
+    <corners
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"  /> // 선 휘는각도
+
+    <Button
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        />
+
+</shape>
