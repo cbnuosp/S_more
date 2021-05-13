@@ -35,6 +35,7 @@ import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import android.widget.ListView;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Frag3_1#newInstance} factory method to
