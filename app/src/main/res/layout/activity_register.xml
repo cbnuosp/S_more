@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#dda0dd">
+            android:background="#EF9D9D">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
-                android:background="#dda0dd"
+                android:background="#EF9D9D"
                 android:drawableStart="@drawable/ic_baseline_person_24"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:hint="ID"
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="#dda0dd"
+                android:background="#EF9D9D"
                 android:drawableStart="@drawable/ic_baseline_https_24"
                 android:drawableLeft="@drawable/ic_baseline_https_24"
                 android:hint="PASSWORD"
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="#dda0dd"
+                android:background="#EF9D9D"
                 android:drawableStart="@drawable/ic_baseline_call_24"
                 android:drawableLeft="@drawable/ic_baseline_call_24"
                 android:hint="PHONE NUMBER"
@@ -140,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#DDA0DD"
+                android:backgroundTint="#EF9D9D"
                 android:text="JOIN US"
                 android:textColor="@color/white"
                 android:id="@+id/registerButton"
