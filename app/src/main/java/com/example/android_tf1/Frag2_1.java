@@ -99,11 +99,6 @@ public class Frag2_1 extends Fragment {
                     areaAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.universityArea,android.R.layout.simple_spinner_dropdown_item);
                     areaSpinner.setAdapter(areaAdapter);
                 }
-                else if(courseUniversity.equals("대학원"))
-                {
-                    areaAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.graduateArea,android.R.layout.simple_spinner_dropdown_item);
-                    areaSpinner.setAdapter(areaAdapter);
-                }
 
             }
         });
