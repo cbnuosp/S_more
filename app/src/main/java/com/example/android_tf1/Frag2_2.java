@@ -8,12 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Frag2_2#newInstance} factory method to
- * create an instance of this fragment.
- */
-
 // 시간표
 public class Frag2_2 extends Fragment {
 
@@ -58,9 +52,9 @@ public class Frag2_2 extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frag2_2, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v=inflater.inflate(R.layout.fragment_frag2_2, container, false);
+
+        return v;
     }
 }

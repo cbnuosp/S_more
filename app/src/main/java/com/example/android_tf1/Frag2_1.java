@@ -7,12 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Spinner;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Frag2_1#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Frag2_1 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -56,9 +54,36 @@ public class Frag2_1 extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frag2_1, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View v = inflater.inflate(R.layout.fragment_frag2_1, container, false);
+
+        Spinner spinnerstart=(Spinner)v.findViewById(R.id.spinner_start);
+        Spinner spinnerend=(Spinner)v.findViewById(R.id.spinner_end);
+
+        spinnerstart.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // i : item 번호, 1번이면 09:00
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+        spinnerend.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // i : item 번호, 1번이면 10:00
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) { }
+        });
+
+
+        return v;
     }
 }
