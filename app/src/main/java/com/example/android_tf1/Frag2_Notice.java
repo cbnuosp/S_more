@@ -2,22 +2,24 @@ package com.example.android_tf1;
 
 public class Frag2_Notice {
 
-    String notice;
+    String major;
     String name;
-    String date;
+    String timestart;
+    String timeend;
 
-    public Frag2_Notice(String notice, String name, String date) {
-        this.notice = notice;
+    public Frag2_Notice(String major, String name, String timestart, String timeend) {
+        this.major = major;
         this.name = name;
-        this.date = date;
+        this.timestart = timestart;
+        this.timeend = timeend;
     }
 
-    public String getNotice() {
-        return notice;
+    public String getMajor() {
+        return major;
     }
 
-    public void setNotice(String notice) {
-        this.notice = notice;
+    public void setMajor(String major) {
+        this.major = major;
     }
 
     public String getName() {
@@ -28,11 +30,19 @@ public class Frag2_Notice {
         this.name = name;
     }
 
-    public String getDate() {
-        return date;
+    public String getTimestart() {
+        return timestart;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setTimestart(String timestart) {
+        this.timestart = timestart;
+    }
+
+    public String getTimeend() {
+        return timeend;
+    }
+
+    public void setTimeend(String timeend) {
+        this.timeend = timeend;
     }
 }

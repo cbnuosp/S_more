@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -31,25 +32,30 @@ public class Frag2 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.frag2, container, false);
 
-        noticeListView=(ListView)v.findViewById(R.id.moticeListView);
+        noticeListView=(ListView)v.findViewById(R.id.noticeListView);
         noticeList=new ArrayList<Frag2_Notice>();
-        noticeList.add(new Frag2_Notice("공지사항입니다.","천은정","2021-05-01"));
-        noticeList.add(new Frag2_Notice("공지사항입니다.","천은정","2021-05-01"));
-        noticeList.add(new Frag2_Notice("공지사항입니다.","천은정","2021-05-01"));
-        noticeList.add(new Frag2_Notice("공지사항입니다.","천은정","2021-05-01"));
-        noticeList.add(new Frag2_Notice("공지사항입니다.","천은정","2021-05-01"));
+        noticeList.add(new Frag2_Notice("오픈소스전문프로젝트","천은정","09:00","10:00"));
+        noticeList.add(new Frag2_Notice("오픈소스전문프로젝트","천은정","09:00","10:00"));
+        noticeList.add(new Frag2_Notice("오픈소스전문프로젝트","천은정","09:00","10:00"));
+        noticeList.add(new Frag2_Notice("오픈소스전문프로젝트","천은정","09:00","10:00"));
+        noticeList.add(new Frag2_Notice("오픈소스전문프로젝트","천은정","09:00","10:00"));
+
         adapter=new Frag2_NoticeListAdapter(getActivity(),noticeList);
         noticeListView.setAdapter(adapter);
 
-        final Button courseButton=(Button)v.findViewById(R.id.courseButton);
-        final Button scheduleButton=(Button)v.findViewById(R.id.scheduleButton);
-        final Button statisticsButton=(Button)v.findViewById(R.id.statisticsButton);
+        //final Button scheduleButton=(Button)v.findViewById(R.id.scheduleButton);
         final LinearLayout notice=(LinearLayout)v.findViewById(R.id.notice);
 
-        courseButton.setOnClickListener(new View.OnClickListener() {
+        ImageButton addtimetablebtn;
+        ImageButton showtimetablebtn;
+        addtimetablebtn = (ImageButton) v.findViewById(R.id.add_timetable_button);
+        showtimetablebtn = (ImageButton) v.findViewById(R.id.show_timetable_button);
+
+        addtimetablebtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                notice.setVisibility(View.GONE);    //공지사항 보여지지 않음
+                notice.setVisibility(View.GONE);
+
                 // Fragment
                 FragmentManager fragmentManager = getChildFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -57,7 +63,20 @@ public class Frag2 extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        scheduleButton.setOnClickListener(new View.OnClickListener() {
+
+        showtimetablebtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                notice.setVisibility(View.GONE);
+
+                // Fragment
+                FragmentManager fragmentManager = getChildFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment, new Frag2_2());
+                fragmentTransaction.commit();
+            }
+        });
+        /*scheduleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 notice.setVisibility(View.GONE);    //공지사항 보여지지 않음
@@ -68,19 +87,7 @@ public class Frag2 extends Fragment {
                 fragmentTransaction.replace(R.id.fragment, new Frag2_2());
                 fragmentTransaction.commit();
             }
-        });
-        statisticsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                notice.setVisibility(View.GONE);    //공지사항 보여지지 않음
-
-                // Fragment
-                FragmentManager fragmentManager = getChildFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment, new Frag2_3());
-                fragmentTransaction.commit();
-            }
-        });
+        });*/
         return v;
     }
 

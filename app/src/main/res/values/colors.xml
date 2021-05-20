@@ -12,7 +12,7 @@
     <color name="t_color">#5B4BEB</color>
 
     <color name="colorfrag2">#EF9D9D</color>
-    <color name="colorfrag2_dark">#F4F0ED</color>
+    <color name="colorfrag2_background">#F4F0ED</color>
     <color name="colorfrag2_list">#F7F7F7</color>
     <color name="colorfrag2_list_dark">#E8E8E8</color>
 

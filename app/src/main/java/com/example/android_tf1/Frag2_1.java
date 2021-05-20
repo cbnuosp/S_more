@@ -7,18 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Frag2_1#newInstance} factory method to
  * create an instance of this fragment.
  */
-
-// 강의목록
 public class Frag2_1 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -40,7 +34,7 @@ public class Frag2_1 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Frag2_1.
+     * @return A new instance of fragment frag2_1.
      */
     // TODO: Rename and change types and number of parameters
     public static Frag2_1 newInstance(String param1, String param2) {
@@ -60,50 +54,6 @@ public class Frag2_1 extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
-    private ArrayAdapter yearAdapter;
-    private Spinner yearSpinner;
-    private ArrayAdapter termAdapter;
-    private Spinner termSpinner;
-    private ArrayAdapter areaAdapter;
-    private Spinner areaSpinner;
-
-    private String courseUniversity="";
-    private String courseYear="";
-    private String courseTerm="";
-    private String courseArea="";
-
-    @Override
-    public void onActivityCreated(Bundle b){
-        super.onActivityCreated(b);
-
-        final RadioGroup courseUniversityGroup = (RadioGroup) getView().findViewById(R.id.courseUniversityGroup);
-        yearSpinner=(Spinner) getView().findViewById(R.id.yearSpinner);
-        termSpinner=(Spinner) getView().findViewById(R.id.termSpinner);
-        areaSpinner=(Spinner) getView().findViewById(R.id.areaSpinner);
-
-        courseUniversityGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                RadioButton courseButton=(RadioButton) getView().findViewById(i);
-                courseUniversity = courseButton.getText().toString();
-
-                yearAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.year,android.R.layout.simple_spinner_dropdown_item);
-                yearSpinner.setAdapter(yearAdapter);
-
-                termAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.term,android.R.layout.simple_spinner_dropdown_item);
-                termSpinner.setAdapter(termAdapter);
-
-                if(courseUniversity.equals("학부"))
-                {
-                    areaAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.universityArea,android.R.layout.simple_spinner_dropdown_item);
-                    areaSpinner.setAdapter(areaAdapter);
-                }
-
-            }
-        });
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

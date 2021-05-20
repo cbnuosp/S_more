@@ -6,10 +6,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="공지사항"
+        android:text="수강과목"
         android:layout_gravity="center"
         android:padding="10dp"
-        android:id="@+id/noticeText"
+        android:id="@+id/majorText"
         android:drawableStart="@drawable/ic_baseline_textsms_24"
         android:drawableLeft="@drawable/ic_baseline_textsms_24"
         android:background="@color/colorfrag2_list"
@@ -35,12 +35,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="2021-05-01"
+            android:text="09:00"
             android:layout_gravity="center"
             android:padding="3dp"
             android:textColor="#000000"
             android:textColorHint="#000000"
-            android:id="@+id/dateText"/>
+            android:id="@+id/timestartText"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text=" ~ "
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="09:00"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:id="@+id/timeendText"/>
 
 
     </LinearLayout>
