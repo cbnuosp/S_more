@@ -36,15 +36,17 @@ public class Frag2_NoticeListAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         View v=View.inflate(context,R.layout.frag2_notice,null);
-        TextView noticeText = (TextView) v.findViewById(R.id.noticeText);
-        TextView nameText = (TextView) v.findViewById(R.id.noticeText);
-        TextView dateText = (TextView) v.findViewById(R.id.noticeText);
+        TextView majorText = (TextView) v.findViewById(R.id.majorText);
+        TextView nameText = (TextView) v.findViewById(R.id.nameText);
+        TextView timestartText = (TextView) v.findViewById(R.id.timestartText);
+        TextView timeendText = (TextView) v.findViewById(R.id.timeendText);
 
-        noticeText.setText(noticeList.get(i).getNotice());
+        majorText.setText(noticeList.get(i).getMajor());
         nameText.setText(noticeList.get(i).getName());
-        dateText.setText(noticeList.get(i).getDate());
+        timestartText.setText(noticeList.get(i).getTimestart());
+        timeendText.setText(noticeList.get(i).getTimeend());
 
-        v.setTag(noticeList.get(i).getNotice());
+        v.setTag(noticeList.get(i).getMajor());
         return v;
     }
 }

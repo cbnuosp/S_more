@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Frag2_2">
+    tools:context=".Frag2_2"
+    android:background="@color/colorfrag2_background">
 
     <!-- TODO: Update blank fragment layout -->
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="10dp">
 
         <TableRow
             android:layout_width="match_parent"
