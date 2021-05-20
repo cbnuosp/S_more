@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".Frag2_1"
     android:background="@color/colorfrag2_background"
     android:orientation="vertical">
@@ -18,8 +18,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="20dp"
             android:text="Add TimeTable"
             android:textColor="#000000"
@@ -83,12 +83,11 @@
                     android:layout_marginRight="20dp"
                     android:paddingLeft="10dp"
                     android:width="10dp"
-                    android:hint="과목을 입력하세요."
+                    android:hint="수강과목명을 입력하세요."
                     android:inputType=""
                     android:privateImeOptions="defaultInputmode=korean"
                     android:background="@color/white"
                     android:textSize="20sp"
-                    android:textCursorDrawable="@drawable/edit_text_cursor"
                     android:maxLength="30" />
             </LinearLayout>
 
@@ -97,7 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="70dp"
                 >
 
                 <TextView
@@ -143,7 +142,6 @@
                     android:privateImeOptions="defaultInputmode=korean"
                     android:background="@color/white"
                     android:textSize="20sp"
-                    android:textCursorDrawable="@drawable/edit_text_cursor"
                     android:maxLength="30" />
             </LinearLayout>
 
@@ -152,7 +150,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="70dp"
                 >
 
                 <TextView
@@ -180,9 +178,55 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
+                <Spinner
+                    android:id="@+id/spinner_start"
+                    android:entries="@array/시작시간"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp">
 
+                </Spinner>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="~"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/black">
+                </TextView>
+                <Spinner
+                    android:id="@+id/spinner_end"
+                    android:entries="@array/끝나는시간"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp">
+
+                </Spinner>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="70dp">
+
+                <Button
+                    android:id="@+id/addok_timetable_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:background="@color/colorfrag2"
+                    android:text="추가하기"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"/>
             </LinearLayout>
 
         </LinearLayout>
