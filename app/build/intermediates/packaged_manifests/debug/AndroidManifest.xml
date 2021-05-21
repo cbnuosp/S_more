@@ -19,13 +19,16 @@
         android:testOnly="true"
         android:theme="@style/Theme.Android_TF1" >
         <activity android:name="com.example.android_tf1.MainActivity" >
+        </activity>
+        <activity android:name="com.example.android_tf1.MypageActivity" />
+        <activity android:name="com.example.android_tf1.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.android_tf1.MypageActivity" />
+        <activity android:name="com.example.android_tf1.RegisterActivity" />
     </application>
 
 </manifest>
