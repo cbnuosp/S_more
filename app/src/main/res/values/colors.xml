@@ -15,5 +15,8 @@
     <color name="colorfrag2_background">#F4F0ED</color>
     <color name="colorfrag2_list">#F7F7F7</color>
     <color name="colorfrag2_list_dark">#E8E8E8</color>
+    //Todo사용
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorAccent">#FF4081</color>
 
 </resources>
