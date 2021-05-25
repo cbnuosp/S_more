@@ -33,16 +33,31 @@
             android:orientation="vertical"
             android:layout_marginTop="80dp">
 
+
+            <EditText
+                android:id="@+id/nameText"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:background="#EF9D9D"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:hint="NAME"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+
             <EditText
                 android:id="@+id/idText"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="10dp"
                 android:background="#EF9D9D"
                 android:drawableStart="@drawable/ic_baseline_person_24"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
-                android:hint="ID"
+                android:hint="gmail.com"
                 android:padding="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
@@ -76,7 +91,7 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
-            <Spinner
+            <!--<Spinner
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -106,7 +121,7 @@
                     android:layout_weight="1"
                     android:text="2학기" />
 
-            </RadioGroup>
+            </RadioGroup>-->
             <!-- <EditText
                 android:id="@+id/gradeText"
                 android:layout_width="280dp"
