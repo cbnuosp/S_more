@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Frag2_2"
+    android:orientation="vertical"
+    android:background="@color/colorfrag2_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal"
+            android:background="@color/colorfrag2"
+            android:layout_marginTop="10dp">
+
+            <ImageButton
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="150dp"
+                android:scaleType="fitCenter"
+                android:background="#00FFFFFF"
+                android:src="@drawable/smoreicon"/>
+
+            <ImageButton
+                android:id="@+id/add_timetablename_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="85dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/ic_outline_add_box_white_24"
+                android:stateListAnimator="@null"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/timetableListView"
+            android:layout_margin="10dp"
+            android:dividerHeight="10dp"
+            android:divider="@color/colorfrag2_background">
+        </ListView>
+
+    </LinearLayout>
+
+</LinearLayout>

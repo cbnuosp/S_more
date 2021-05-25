@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            android:orientation="vertical"
+            android:background="#EF9D9D">
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/smoreicon"/>
+            <!--어플 로고 넣기-->
+            <!-- <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                 android:text="S'more"
+                 android:textColor="@color/white"
+                 android:textSize="25dp"
+                 android:textStyle="bold"
+                 android:layout_marginTop="10dp" />-->
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint="ID"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:id="@+id/idText"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:layout_marginTop="50dp"
+                android:background="#EF9D9D"/>
+
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint="PASSWORD"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:id="@+id/pwText"
+                android:drawableStart="@drawable/ic_baseline_https_24"
+                android:drawableLeft="@drawable/ic_baseline_https_24"
+                android:layout_marginTop="10dp"
+                android:background="#EF9D9D"/>
+
+            <Button
+                android:layout_width="280dp"
+                android:id="@+id/login"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#EF9D9D"
+                android:text="LOGIN"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:text="JOIN"
+                android:id="@+id/registerButton"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

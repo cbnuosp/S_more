@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_cal"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_date_range_24"
+        android:title="캘린더"/>
+
+    <item
+        android:id="@+id/action_time"
+        android:enabled="true"
+        android:icon="@drawable/ic_outline_access_time_24"
+        android:title="시간표"/>
+
+    <item
+        android:id="@+id/action_chall"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_format_list_bulleted_24"
+        android:title="챌린지"/>
+
+    <item
+        android:id="@+id/action_set"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="설정"/>
+
+
+</menu>

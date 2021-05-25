@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="시간표 이름"
+        android:layout_gravity="center"
+        android:padding="12dp"
+        android:id="@+id/name_text"
+        android:drawableStart="@drawable/ic_baseline_textsms_24"
+        android:drawableLeft="@drawable/ic_baseline_textsms_24"
+        android:background="@color/colorfrag2_list"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorfrag2_list_dark">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="시간표"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#000000"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="기본"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#FF0000"
+            android:textColorHint="#000000"
+            android:textSize="5pt"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
