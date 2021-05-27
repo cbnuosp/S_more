@@ -51,7 +51,6 @@ public class RegisterActivity extends FragmentActivity {
     private RadioGroup semester_join;
     private RadioButton sem;
     private Button btn;
-
     private User user;
     FirebaseAuth firebaseAuth;
     private FirebaseFirestore db=FirebaseFirestore.getInstance();
