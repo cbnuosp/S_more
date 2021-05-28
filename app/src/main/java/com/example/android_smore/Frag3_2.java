@@ -1,34 +1,49 @@
 package com.example.android_smore;
 
+import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Frag3_2#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Frag3_2 extends Fragment {
+import com.example.android_smore.Model.ChallengeModel;
+import com.example.android_smore.Model.ChallengeResponse;
+import com.example.android_smore.Model.ChallengeTaskModel;
+import com.example.android_smore.adapter.ChallengeAdapter;
+import com.example.android_smore.adapter.ChallengeUpdateAdapter;
+import com.example.android_smore.base.BaseFragment;
+import com.example.android_smore.databinding.Frag32Binding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.WriteBatch;
+import com.google.gson.internal.$Gson$Preconditions;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class Frag3_2 extends BaseFragment<Frag32Binding> {
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    DocumentReference req;
     private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
-    private String mParam2;
+    private ChallengeUpdateAdapter adapter;
+    private ChallengeModel currentItem;
+
 
     private View view;
 
@@ -36,22 +51,17 @@ public class Frag3_2 extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Frag3_2.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Frag3_2 newInstance(String param1, String param2) {
+    public static Frag3_2 newInstance(String param1) {
         Frag3_2 fragment = new Frag3_2();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    protected int layoutRes() {
+        return R.layout.frag3_2;
     }
 
     @Override
@@ -59,20 +69,89 @@ public class Frag3_2 extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            L.i("::: ID " + mParam1);
         }
     }
 
+    //체크 여부 저장
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag3_2, container, false);
+    protected void onViewCreated() {
+        req = db.collection("Challenges").document(mParam1);
+        initRecyclerView();
+        onLoad();
+        binding.quitDetails.setOnClickListener(view -> onFinish());
+        binding.btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                currentItem.setList(adapter.getItemList());
+                WriteBatch batch = db.batch();
+                batch.set(req, currentItem);
+                batch.commit().addOnCompleteListener(task -> {
+                    L.e("::::::::::::::task " + task.isSuccessful());
+                    if (task.isSuccessful()) {
+                        onFinish();
+                        Toast.makeText(getActivity(), "저장되었습니다.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "저장에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-        //x버튼 클릭 -> 메인화면(frag3)으로 이동 동작 부분
+            }
+        });
+
+        //DB에서 데이터 삭제
+        binding.btnDelete.setOnClickListener(view -> req.delete().addOnSuccessListener(aVoid -> {
+            onFinish();
+            Toast.makeText(getActivity(), "삭제되었습니다", Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(e -> Toast.makeText(getActivity(), "삭제에 실패하였습니다.", Toast.LENGTH_SHORT).show()));
+    }
+
+    //삭제 후 frag3으로 이동
+    private void onFinish() {
+        getFragmentManager().beginTransaction().replace(R.id.main_frame, new Frag3()).commit();
+    }
+
+    private void initRecyclerView() {
+        adapter = new ChallengeUpdateAdapter(getActivity()) {
+            @Override
+            public void onCheckBoxClick(int position, ChallengeTaskModel data) {
+                adapter.updateItem(position, data);
+            }
+        };
+        binding.listView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        binding.listView.setHasFixedSize(true);
+        binding.listView.setAdapter(adapter);
 
     }
-}
 
-//세부화면 이벤트 부분
-//체크리스크 체크 후 저장 버튼 눌렀을 때 동작 구현 -> 진행률 계산
+
+    //데이터 로드
+    private void onLoad() {
+        req.get().addOnCompleteListener(task -> {
+            L.e(":::::::::::::::::::isSuccessful  " + task.isSuccessful());
+            if (task.isSuccessful()) {
+                if (task.getResult() == null) {
+                    return;
+                }
+                DocumentSnapshot document = task.getResult();
+                L.d(document.getId() + " => " + document.getData());
+                String id = document.getId();
+                ChallengeModel model = document.toObject(ChallengeModel.class);
+
+                if (model == null) return;
+
+                currentItem = model;
+                binding.title.setText(model.getTitle());
+                binding.SDate.setText(model.getStartDate());
+                binding.EDate.setText(model.getEndDate());
+                binding.detailsMemo.setText(model.getMemo());
+                adapter.updateItems(model.getList());
+
+            } else {
+                L.e("Error getting documents: " + task.getException());
+            }
+        });
+    }
+
+
+}

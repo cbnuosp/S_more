@@ -251,7 +251,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
 
                 <EditText
                     android:id="@+id/add_c_list_task"
@@ -293,13 +294,14 @@
             </LinearLayout>
 
             <!--리스트 출력-->
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/listView" >
+                android:id="@+id/recyclerview"
+                android:scrollbarFadeDuration="0"
+                android:scrollbarSize="5dp">
 
-            </ListView>
+            </androidx.recyclerview.widget.RecyclerView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -387,14 +389,4 @@
 
         </LinearLayout>
     </ScrollView>
-
-
-
-
 </LinearLayout>
-
-
-    <!--챌린지 추가 창 frag3_1-->
-
-    <!--한글 입력 안되는 문제, 세부 디자인 수정-->
-    <!--이미지 버튼 색깔 바뀌는 이벤트 추가-->

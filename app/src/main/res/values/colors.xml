@@ -16,7 +16,37 @@
     <color name="colorfrag2_list">#F7F7F7</color>
     <color name="colorfrag2_list_dark">#E8E8E8</color>
 
-    //Todo사용
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="black_op">#66000000</color>
+
+    <color name="gray_2">#585858</color>
+    <color name="gray4">#a9a9a9</color>
+    <color name="gray1">#2b2d2e</color>
+    <color name="green">#6aa76f</color>
+    <color name="gray6">#e0e0e0</color>
+    <color name="gray5">#cdcdcd</color>
+    <color name="gray3">#787878</color>
+    <color name="blue__calendar__select">#5ea2ff</color>
+    <color name="pink">#ff7474</color>
+    <color name="gray7">#eeeeee</color>
+    <color name="b_g">#f9f9f9</color>
+    <color name="blue__calendar">#87bfff</color>
+    <color name="green__calendar__select">#81cc89</color>
+    <color name="green__calendar">#aee6b4</color>
+    <color name="green__dark">#7f9c82</color>
+
+    <color name="red_500">#F44336</color>
+    <color name="red_200">#EF9A9A</color>
+
+    <color name="blue_500">#2196F3</color>
+    <color name="blue_200">#90CAF9</color>
+    <color name="green_500">#4CAF50</color>
+    <color name="green_200">#A5D6A7</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="orange_200">#FFCC80</color>
+    <color name="brown_500">#795548</color>
+    <color name="brown_200">#BCAAA4</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_200">#EEEEEE</color>
+
+
 </resources>
