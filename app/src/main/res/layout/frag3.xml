@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F0ED"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,6 +51,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent"
         android:background="#F4F0ED" >
 
@@ -60,12 +63,12 @@
             android:layout_marginTop="10dp" />
 
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
 </LinearLayout>
-
-
-
-    <!--챌린지 프로그래스바 db에서 불러오기-->
-    <!--프로그래스 바 클릭시 해당 세부 창으로 이동 frag3_2-->
-    <!--프로그래스 바 왼쪽에 챌린지 제목, 오른쪽에 진행률 표시-->
+</layout>
