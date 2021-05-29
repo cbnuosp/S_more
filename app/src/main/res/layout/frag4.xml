@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F0ED"
     android:orientation="vertical">
@@ -30,172 +33,122 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/SView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F4F0ED"
-        android:layout_marginTop="20dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="#EF9D9D"
-            android:layout_margin="20dp"
-            android:padding="10dp"
-            android:drawableStart="@drawable/ic_baseline_person_24"
-            android:drawableLeft="@drawable/ic_baseline_person_24"
-            android:id="@+id/userid"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="18dp"
-            android:text="LOGOUT"
-            android:id="@+id/logoutbtn"/>
-
-        <Button
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:id="@+id/pageButton"
-            android:backgroundTint="#EF9D9D"
-            android:text="마이페이지"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F4F0ED"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F4F0ED"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="0"
-            android:text="푸쉬 알림"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="#EF9D9D"
+                    android:layout_margin="20dp"
+                    android:padding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_person_24"
+                    android:drawableLeft="@drawable/ic_baseline_person_24"
+                    android:id="@+id/userid"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="31dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="220dp"
-            android:track="@drawable/switch_track_selector"
-            android:thumb="@drawable/switch_thumb"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="18dp"
+                    android:text="LOGOUT"
+                    android:id="@+id/logoutbtn"/>
 
-    </LinearLayout>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:id="@+id/pageButton"
+                    android:backgroundTint="#EF9D9D"
+                    android:text="마이페이지"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F4F0ED"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F4F0ED"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="0"
-            android:text="위젯 설정"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0"
+                    android:text="푸쉬 알림"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
-            android:background="#EF9D9D" />
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="31dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="220dp"
+                    android:track="@drawable/switch_track_selector"
+                    android:thumb="@drawable/switch_thumb"/>
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F4F0ED"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F4F0ED"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/timelayout"
+                >
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:backgroundTint="#EF9D9D"
-            android:text="캘린더"
-            android:textColor="@color/white"
-            android:id="@+id/calendarBtn"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+                <TimePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/timePicker"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    android:timePickerMode="spinner"/>
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="50dp"
-            android:backgroundTint="#EF9D9D"
-            android:text="To Do List"
-            android:textColor="@color/white"
-            android:id="@+id/todoBtn"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+                <Button
+                    android:id="@+id/setbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#EF9D9D"
+                    android:layout_gravity="center"
+                    android:text="알림 시간 설정"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F4F0ED"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
+        </LinearLayout>
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
-            android:backgroundTint="#EF9D9D"
-            android:text="시간표"
-            android:textColor="@color/white"
-            android:id="@+id/timeBtn"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+    </ScrollView>
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="50dp"
-            android:backgroundTint="#EF9D9D"
-            android:text="Challenge"
-            android:textColor="@color/white"
-            android:id="@+id/challengeBtn"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
 
 </LinearLayout>

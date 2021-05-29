@@ -72,7 +72,6 @@ public class Frag1_2 extends Fragment {
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
         view=inflater.inflate(R.layout.frag1_2,container,false);
-
         titlepage=view.findViewById(R.id.titlepage);
 
         addtitle=view.findViewById(R.id.titlepage);

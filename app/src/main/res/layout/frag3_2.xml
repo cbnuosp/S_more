@@ -109,8 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
-                <!--해당 챌린지의 기간 출력 부분-->
-                <TextView
+                <Button
                     android:id="@+id/SDate"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
@@ -119,10 +118,9 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginRight="0dp"
-                    android:gravity="center_horizontal"
                     android:layout_weight="2"
                     android:width="10dp"
-                    android:background="@drawable/frag3_2_box"
+                    android:background="@drawable/frag3_1_btn1"
                     android:hint="시작날짜"
                     android:textSize="17sp"
                     app:backgroundTint="#FFFFFF" />
@@ -139,7 +137,7 @@
                     android:textColor="#000000"
                     android:textSize="20sp" />
 
-                <TextView
+                <Button
                     android:id="@+id/EDate"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
@@ -148,8 +146,7 @@
                     android:layout_marginRight="0dp"
                     android:layout_weight="2"
                     android:width="10dp"
-                    android:gravity="center_horizontal"
-                    android:background="@drawable/frag3_2_box"
+                    android:background="@drawable/frag3_1_btn1"
                     android:hint="종료날짜"
                     android:textSize="17sp"
                     app:backgroundTint="#FFFFFF" />
@@ -200,6 +197,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="30dp"
                 android:id="@+id/listView"/>
 
             <!--해당 챌린지의 메모 출력-->
@@ -279,8 +278,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="105dp"
-                    android:layout_marginLeft="105dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginLeft="100dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
                     android:background="#A36C6C"
@@ -293,8 +292,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
                     android:background="#EF9D9D"
