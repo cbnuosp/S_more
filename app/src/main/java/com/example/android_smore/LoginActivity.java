@@ -32,7 +32,7 @@ public class LoginActivity extends FragmentActivity {
     private EditText pw_login;
     FirebaseAuth firebaseAuth;
     private Button loginB;
-    private TextView registerT;
+    private Button registerT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,7 @@ public class LoginActivity extends FragmentActivity {
         id_login = (EditText)findViewById(R.id.idText);
         pw_login = (EditText)findViewById(R.id.pwText);
         Button loginB = (Button)findViewById(R.id.login);
-        registerT = (TextView)findViewById(R.id.registerButton);
+        Button registerT = (Button)findViewById(R.id.registerButton);
 
         firebaseAuth = firebaseAuth.getInstance();
 
@@ -72,15 +72,13 @@ public class LoginActivity extends FragmentActivity {
             }
         });
 
-
-        registerT.setOnClickListener(new View.OnClickListener() {
+        registerT.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
                 Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(registerIntent);
             }
         });
-
 
 
     }

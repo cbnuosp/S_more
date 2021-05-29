@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".Frag2_3"
     android:orientation="vertical"
-    android:background="@color/colorfrag2_background">
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,40 +15,55 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:orientation="horizontal"
-            android:background="@color/colorfrag2">
+            android:background="#ffffff"
+            android:orientation="horizontal">
 
             <ImageButton
-                android:layout_width="125dp"
-                android:layout_height="125dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="150dp"
-                android:scaleType="fitCenter"
+                android:layout_marginLeft="100dp"
                 android:background="#00FFFFFF"
-                android:src="@drawable/smoreicon" />
+                android:scaleType="fitCenter"
+                android:src="@drawable/smlogo" />
 
             <ImageButton
                 android:id="@+id/add_timetablename_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginLeft="55dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginLeft="85dp"
                 android:background="#00FFFFFF"
+                android:scaleType="fitCenter"
                 android:src="@drawable/ic_outline_add_box_white_24"
                 android:stateListAnimator="@null"
-                tools:ignore="HardcodedText"
-                android:scaleType="fitCenter"/>
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
 
-        <ListView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/yellow"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+
+        <ListView
             android:id="@+id/timetableListView"
+            android:layout_width="match_parent"
+            android:layout_height="510dp"
             android:layout_margin="10dp"
-            android:dividerHeight="10dp"
-            android:divider="@color/colorfrag2_background">
-        </ListView>
+            android:divider="@color/background"
+            android:dividerHeight="10dp"></ListView>
 
     </LinearLayout>
 
