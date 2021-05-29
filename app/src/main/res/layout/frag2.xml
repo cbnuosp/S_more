@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.andro id.com/tools"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorfrag2_background"
+        android:background="@color/background2"
         android:orientation="horizontal"
         >
 
@@ -65,26 +65,28 @@
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F4F0ED" >
+        android:background="@color/background2" >
 
-        <!--수평선-->
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="#000000"
+            android:background="@color/yellow"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp" />
-
-
     </LinearLayout>
 
     <!-- 각각의 버튼 클릭시 화면 전환-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorfrag2_background">
+        android:background="@color/background2">
 
         <!--버튼 클릭 시 LinearLayout 삭제, RelativeLayout 보임, button 클릭시 Frag 출력-->
         <RelativeLayout

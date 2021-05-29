@@ -2,30 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".Frag2_2"
-    android:background="@color/colorfrag2_background"
+    android:background="@color/background2"
     android:orientation="vertical">
-
-    <!-- 시간표 추가
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="20dp"
-            android:text="Add TimeTable"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>-->
 
     <!--입력창-->
     <ScrollView
@@ -45,10 +25,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/red"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="0"
                     android:text="Course Name"
                     android:textColor="#000000"
@@ -56,15 +45,7 @@
                     android:textStyle="bold"
                     tools:ignore="HardcodedText"
                     />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/colorfrag2"/>
+
             </LinearLayout>
 
             <LinearLayout
@@ -75,7 +56,7 @@
                 <EditText
                     android:id="@+id/add_coursename_text"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
@@ -86,7 +67,7 @@
                     android:hint="수강과목명을 입력하세요."
                     android:inputType=""
                     android:privateImeOptions="defaultInputmode=korean"
-                    android:background="@color/white"
+                    android:background="@drawable/redbtn"
                     android:textSize="20sp"
                     android:maxLength="30" />
             </LinearLayout>
@@ -99,10 +80,19 @@
                 android:layout_marginTop="50dp"
                 >
 
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/orange"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="0"
                     android:text="Professor Name"
                     android:textColor="#000000"
@@ -110,15 +100,7 @@
                     android:textStyle="bold"
                     tools:ignore="HardcodedText"
                     />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/colorfrag2"/>
+
             </LinearLayout>
 
             <LinearLayout
@@ -129,7 +111,7 @@
                 <EditText
                     android:id="@+id/add_professorname_text"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
@@ -140,7 +122,7 @@
                     android:hint="교수명을 입력하세요."
                     android:inputType=""
                     android:privateImeOptions="defaultInputmode=korean"
-                    android:background="@color/white"
+                    android:background="@drawable/orangebtn"
                     android:textSize="20sp"
                     android:maxLength="30" />
             </LinearLayout>
@@ -153,10 +135,19 @@
                 android:layout_marginTop="50dp"
                 >
 
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/yellow" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="0"
                     android:text="Day"
                     android:textColor="#000000"
@@ -164,15 +155,6 @@
                     android:textStyle="bold"
                     tools:ignore="HardcodedText"
                     />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/colorfrag2"/>
             </LinearLayout>
 
             <LinearLayout
@@ -184,7 +166,7 @@
                     android:id="@+id/spinner_day"
                     android:entries="@array/요일"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
@@ -192,7 +174,7 @@
                     android:layout_marginRight="20dp"
                     android:paddingLeft="10dp"
                     android:width="10dp"
-                    android:background="@color/white"
+                    android:background="@drawable/yellowbtn"
                     >
                 </Spinner>
             </LinearLayout>
@@ -205,10 +187,19 @@
                 android:layout_marginTop="50dp"
                 >
 
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/green"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="0"
                     android:text="Time"
                     android:textColor="#000000"
@@ -216,15 +207,7 @@
                     android:textStyle="bold"
                     tools:ignore="HardcodedText"
                     />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/colorfrag2"/>
+
             </LinearLayout>
 
             <LinearLayout
@@ -236,8 +219,8 @@
                     android:id="@+id/spinner_start"
                     android:entries="@array/시작시간"
                     android:layout_width="160dp"
-                    android:layout_height="40dp"
-                    android:background="@color/white"
+                    android:layout_height="50dp"
+                    android:background="@drawable/greenbtn"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp">
 
@@ -255,8 +238,8 @@
                     android:id="@+id/spinner_end"
                     android:entries="@array/끝나는시간"
                     android:layout_width="160dp"
-                    android:layout_height="40dp"
-                    android:background="@color/white"
+                    android:layout_height="50dp"
+                    android:background="@drawable/greenbtn"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp">
                 </Spinner>
@@ -271,10 +254,19 @@
                 android:layout_marginTop="50dp"
                 >
 
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/blue" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="0"
                     android:text="Color"
                     android:textColor="#000000"
@@ -282,15 +274,6 @@
                     android:textStyle="bold"
                     tools:ignore="HardcodedText"
                     />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/colorfrag2"/>
 
             </LinearLayout>
 
@@ -303,8 +286,8 @@
                     android:id="@+id/spinner_color"
                     android:entries="@array/색"
                     android:layout_width="160dp"
-                    android:layout_height="40dp"
-                    android:background="@color/white"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bluebtn"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp">
                 </Spinner>
@@ -312,10 +295,10 @@
                 <ImageView
                     android:id="@+id/preview_image"
                     android:layout_width="160dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="50dp"
                     android:layout_marginTop="15dp"
-                    android:src="@color/colorfrag2_background"
+                    android:src="@color/background2"
                     ></ImageView>
             </LinearLayout>
 
@@ -324,7 +307,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="40dp">
 
                 <Button
                     android:id="@+id/add_coursedata_button"
@@ -332,7 +315,7 @@
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
-                    android:backgroundTint="@color/colorfrag2"
+                    android:backgroundTint="@color/yellow"
                     android:text="추가하기"
                     android:textColor="#ffffff"
                     android:textStyle="bold"/>

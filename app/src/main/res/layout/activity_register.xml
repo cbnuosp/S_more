@@ -11,27 +11,25 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="255dp"
             android:orientation="vertical"
-            android:background="#EF9D9D">
+            android:background="#FFFFFF">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <!--어플 로고 넣기-->
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
                 android:layout_gravity="center"
-                android:text="JOIN US"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginTop="20dp"
+                android:src="@drawable/smlogo"/>
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="80dp">
+            android:background="@color/background">
 
 
             <EditText
@@ -39,14 +37,14 @@
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="70dp"
-                android:background="#EF9D9D"
+                android:layout_marginTop="50dp"
+                android:background="@color/white"
                 android:drawableStart="@drawable/ic_baseline_person_24"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
                 android:hint="NAME"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/idText"
@@ -54,13 +52,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="#EF9D9D"
+                android:background="@color/white"
                 android:drawableStart="@drawable/ic_baseline_person_24"
                 android:drawableLeft="@drawable/ic_baseline_person_24"
-                android:hint="gmail.com"
+                android:hint="ID ( abc@gmail.com )"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/pwText"
@@ -68,14 +66,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="#EF9D9D"
+                android:background="@color/white"
                 android:drawableStart="@drawable/ic_baseline_https_24"
                 android:drawableLeft="@drawable/ic_baseline_https_24"
                 android:hint="PASSWORD"
                 android:inputType="textPassword"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <EditText
                 android:id="@+id/phoneText"
@@ -83,13 +81,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="#EF9D9D"
+                android:background="@color/white"
                 android:drawableStart="@drawable/ic_baseline_call_24"
                 android:drawableLeft="@drawable/ic_baseline_call_24"
                 android:hint="PHONE NUMBER"
                 android:padding="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/black" />
 
             <!--<Spinner
                 android:layout_width="280dp"
@@ -154,8 +152,8 @@
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#EF9D9D"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/orange"
                 android:text="JOIN US"
                 android:textColor="@color/white"
                 android:id="@+id/registerButton"
