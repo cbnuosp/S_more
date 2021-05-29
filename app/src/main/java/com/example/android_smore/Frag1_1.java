@@ -2,6 +2,7 @@ package com.example.android_smore;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,11 +35,13 @@ public class Frag1_1 extends Fragment {
     private String mParam2;
     private View view;
     private TextView emptypage;
+    private Button plusButton;
 
-
+    //    DatabaseReference reference;
     private RecyclerView ourdoes;
     private ArrayList<Frag1_3> list=new ArrayList<Frag1_3>();
     private Adapter1 adapter1;
+    private LinearLayoutManager layoutManager;
 
     /**
      * Use this factory method to create a new instance of
@@ -89,14 +93,43 @@ public class Frag1_1 extends Fragment {
         ViewGroup rootView=(ViewGroup)inflater.inflate(R.layout.frag1_1,container,false);
         ourdoes=(RecyclerView) rootView.findViewById(R.id.ourdoes);
 
+        layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+
         adapter1=new Adapter1(getActivity(),list);
-        ourdoes.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        ourdoes.setLayoutManager(layoutManager);
         ourdoes.setAdapter(adapter1);
 
-        // working with data
-        //ourdoes = view.findViewById(R.id.ourdoes);
-        //ourdoes.setLayoutManager(new LinearLayoutManager(this));
-        //list = new ArrayList<Frag1_3>();
+//        // working with data
+//        ourdoes = view.findViewById(R.id.ourdoes);
+//        ourdoes.setLayoutManager(new LinearLayoutManager(content));
+//        list = new ArrayList<Frag1_3>();
+
+//        // get data from firebase
+//        // FirebaseApp.initializeApp(this);
+//        reference = FirebaseDatabase.getInstance().getReference().child("DoesApp");
+//        reference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                // set code to retrive data and replace layout
+//                Log.e("Count " ,""+dataSnapshot.getChildrenCount());
+//                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
+//                {
+//                    MyDoes p = dataSnapshot1.getValue(MyDoes.class);
+//                    list.add(p);
+//                }
+//                doesAdapter = new DoesAdapter(MainActivity.this, list);
+//                ourdoes.setAdapter(doesAdapter);
+//                doesAdapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                // set code to show an error
+//                Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
+//            }
+//        });
         return view;
     }
 }

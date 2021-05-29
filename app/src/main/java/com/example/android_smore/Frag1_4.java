@@ -8,13 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Frag1_3#newInstance} factory method to
+ * Use the {@link Frag1_4#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Frag1_3 extends Fragment {
+public class Frag1_4 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,56 +23,9 @@ public class Frag1_3 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    //여기부터붙여넣음
-    String titledoes;
-    String datedoes;
-    String descdoes;
 
-    public Frag1_3( String titledoes, String datedoes, String descdoes ) {
-        this.titledoes = titledoes;
-        this.datedoes = datedoes;
-        this.descdoes = descdoes;
-//        this.keydoes = keydoes;
-    }
-
-//    public String getKeydoes() {
-//        return keydoes;
-//    }
-
-    public String getTitledoes() {
-
-        return titledoes;
-    }
-
-    public void setTitledoes( String titledoes ) {
-
-        this.titledoes = titledoes;
-    }
-
-    public String getDatedoes() {
-
-        return datedoes;
-    }
-
-    public void setDatedoes( String datedoes ) {
-
-        this.datedoes = datedoes;
-    }
-
-    public String getDescdoes() {
-
-        return descdoes;
-    }
-
-    public void setDescdoes( String descdoes ) {
-
-        this.descdoes = descdoes;
-    }
-
-
-    public Frag1_3() {
+    public Frag1_4() {
         // Required empty public constructor
-
     }
 
     /**
@@ -82,11 +34,11 @@ public class Frag1_3 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Frag1_3.
+     * @return A new instance of fragment Frag1_4.
      */
     // TODO: Rename and change types and number of parameters
-    public static Frag1_3 newInstance( String param1, String param2 ) {
-        Frag1_3 fragment = new Frag1_3();
+    public static Frag1_4 newInstance( String param1, String param2 ) {
+        Frag1_4 fragment = new Frag1_4();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -106,9 +58,7 @@ public class Frag1_3 extends Fragment {
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState ) {
-
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag1_3, container, false);
+        return inflater.inflate(R.layout.frag1_4, container, false);
     }
 }
