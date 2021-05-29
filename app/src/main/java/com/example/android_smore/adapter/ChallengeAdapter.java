@@ -52,18 +52,18 @@ public class ChallengeAdapter extends BaseRecyclerAdapter<ChallengeResponse, Cha
                     }
                 }
                 L.i("::::archiveCount " + archiveCount + " total " + total);
-                percent = (archiveCount / total);//체크된 개수/전체 개수
+                percent = archiveCount / total;//체크된 개수/전체 개수
             }
             //프로그래스바 퍼센트
             L.i("::::percent " + percent);
             binding.progress.setShowingPercentage(false);
             binding.progress.setMaximumPercentage(percent);
             //프로그래스바 색상
-            binding.progress.setProgressColor(Color.parseColor("#ff7474"));
-            binding.progress.setProgressBackgroundColor(Color.parseColor("#EF9A9A"));
+            binding.progress.setProgressColor(Color.parseColor("#FF9E9B"));
+            binding.progress.setProgressBackgroundColor(Color.parseColor("#FFBCB9"));
             //프로그래스바 타이틀
             binding.tvName.setText(data.getChallengeModel().getTitle());
-            binding.tvPercent.setText((percent * 100) + "%");
+            binding.tvPercent.setText(Math.round(percent*100) + "%");//반올림
 
         }
     }
