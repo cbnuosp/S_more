@@ -38,19 +38,19 @@ public class Adapter1 extends RecyclerView.Adapter<Adapter1.MyViewHolder>{
         final String getTitleDoes = myDoes.get(i).getTitledoes();
         final String getDescDoes = myDoes.get(i).getDescdoes();
         final String getDateDoes = myDoes.get(i).getDatedoes();
-
-//        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-//            public void onClick( View v ) {
-//                Intent aa=new Intent(context, EditTaskDesk.class);
-//                aa.putExtra("titledoes",getTitleDoes);
-//                aa.putExtra("descdoes", getDescDoes);
-//                aa.putExtra("datedoes", getDateDoes);
-//                context.startActivity(aa);
-//            }
-//        });
+//        final String getKeyDoes = myDoes.get(i).getKeydoes();
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent aa = new Intent(context,Frag1_3.class);
+                aa.putExtra("titledoes", getTitleDoes);
+                aa.putExtra("descdoes", getDescDoes);
+                aa.putExtra("datedoes", getDateDoes);
+                //aa.putExtra("keydoes", getKeyDoes);
+                context.startActivity(aa);
+            }
+        });
     }
-
-
 
     @Override
     public int getItemCount() {
@@ -59,6 +59,7 @@ public class Adapter1 extends RecyclerView.Adapter<Adapter1.MyViewHolder>{
     //viewholder가 하나의 view를 보존하는 역할
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView titledoes, descdoes, datedoes;
+
         public MyViewHolder( @NonNull View itemView){
             super(itemView);
             titledoes = (TextView) itemView.findViewById(R.id.titledoes);
