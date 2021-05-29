@@ -3,11 +3,13 @@ package com.example.android_smore;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +17,18 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import static android.content.ContentValues.TAG;
 
 // 시간표 화면
 public class Frag2 extends Fragment {
@@ -26,7 +39,7 @@ public class Frag2 extends Fragment {
         View v=inflater.inflate(R.layout.frag2, container, false);
 
         //final Button scheduleButton=(Button)v.findViewById(R.id.scheduleButton);
-        final LinearLayout timetable=(LinearLayout)v.findViewById(R.id.timetable);
+        //final LinearLayout timetable=(LinearLayout)v.findViewById(R.id.timetable);
 
         ImageButton addtimetablebtn;
         ImageButton deletetimetablebtn;
@@ -35,11 +48,25 @@ public class Frag2 extends Fragment {
         deletetimetablebtn = (ImageButton) v.findViewById(R.id.delete_timetable_button);
         timetablelistbtn = (ImageButton) v.findViewById(R.id.timetablelist_button);
 
-        addtimetablebtn.setOnClickListener(new View.OnClickListener(){
+        final TextView timetablenametxt;
+        TextView timetablehometxt;
+        timetablenametxt = (TextView) v.findViewById(R.id.timetablename_text);
+        timetablehometxt = (TextView) v.findViewById(R.id.timetablehome);
+
+        // Firebase code
+        final FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid=user.getEmail();
+
+        // Fragment
+        FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment, new Frag2_1());
+        fragmentTransaction.commit();
+
+        timetablehometxt.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                timetable.setVisibility(View.GONE);
-
                 // Fragment
                 FragmentManager fragmentManager = getChildFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -48,16 +75,20 @@ public class Frag2 extends Fragment {
             }
         });
 
-        deletetimetablebtn.setOnClickListener(new View.OnClickListener(){
+        addtimetablebtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                /*timetable.setVisibility(View.GONE);
-
                 // Fragment
                 FragmentManager fragmentManager = getChildFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.fragment, new Frag2_2());
-                fragmentTransaction.commit();*/
+                fragmentTransaction.commit();
+            }
+        });
+
+        deletetimetablebtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setTitle("Delete TimeTable");
                 builder.setMessage("시간표를 삭제하시겠습니까?");
@@ -66,8 +97,81 @@ public class Frag2 extends Fragment {
                         new DialogInterface.OnClickListener(){
 
                             @Override
+                            // 삭제 버튼
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 // 삭제 선택시
+                                // 선택된 시간표 data 제거
+                                Log.d(TAG,"2");
+                                db.collection("Timetable")
+                                        .whereEqualTo("select",true)
+                                        .get()
+                                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                if (task.isSuccessful()){
+                                                    for(QueryDocumentSnapshot document : task.getResult()) {
+                                                        Log.d(TAG, "선택된 문서 :"+document.getId() + "=>" + document.getData());
+                                                        if (document.get("id").toString().equals(uid)) {
+                                                            Log.d(TAG, "삭제될 문서 : "+document.getId() + "=>" + document.getData());
+                                                            db.collection("Timetable").document(document.getId())
+                                                                    .delete()
+                                                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                        @Override
+                                                                        public void onSuccess(Void aVoid) {
+                                                                            Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                                                                        }
+                                                                    })
+                                                                    .addOnFailureListener(new OnFailureListener() {
+                                                                        @Override
+                                                                        public void onFailure(@NonNull Exception e) {
+                                                                            Log.w(TAG, "Error deleting document", e);
+                                                                        }
+                                                                    });
+                                                        }
+                                                    }
+                                                    // 다음 시간표 선택
+                                                    db.collection("Timetable")
+                                                            .whereEqualTo("select",false)
+                                                            .get()
+                                                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                                    if(task.isSuccessful()) {
+                                                                        for (QueryDocumentSnapshot document : task.getResult()) {
+                                                                            Log.d(TAG, "다음 선택될 시간표 :"+document.getId() + " => " + document.getData());
+                                                                            if(document.get("id").toString().equals(uid)){
+                                                                                Log.d(TAG, "다음 선택될 시간표 해당 아이디 :"+document.getId() + " => " + document.getData());
+                                                                                timetablenametxt.setText(document.get("tablename").toString());
+                                                                                DocumentReference changeref = db.collection("Timetable").document(document.getId());
+                                                                                changeref.update("select", true)
+                                                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                                            @Override
+                                                                                            public void onSuccess(Void aVoid) {
+                                                                                                Log.d(TAG, "DocumentSnapshot successfully updated!");
+                                                                                            }
+
+                                                                                        })
+                                                                                        .addOnFailureListener(new OnFailureListener() {
+                                                                                            @Override
+                                                                                            public void onFailure(@NonNull Exception e) {
+                                                                                                Log.w(TAG, "Error updating document", e);
+                                                                                            }
+                                                                                        });
+                                                                                break;
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    else{
+                                                                        Log.d(TAG,"Error getting documents : ",task.getException());
+                                                                    }
+                                                                }
+                                                            });
+                                                }
+                                                else{
+                                                    Log.d(TAG,"Error getting documents : ",task.getException());
+                                                }
+                                            }
+                                        });
                             }
                         });
                 /*builder.setPositiveButton("취소",
@@ -85,12 +189,10 @@ public class Frag2 extends Fragment {
         timetablelistbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                timetable.setVisibility(View.GONE);
-
                 // Fragment
                 FragmentManager fragmentManager = getChildFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment, new Frag2_2());
+                fragmentTransaction.replace(R.id.fragment, new Frag2_3());
                 fragmentTransaction.commit();
             }
         });

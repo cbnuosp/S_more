@@ -1,11 +1,11 @@
 package com.example.android_smore;
 
-public class Frag2_2_List {
+public class Frag2_3_List {
 
     String name;
 
 
-    public Frag2_2_List(String name) {
+    public Frag2_3_List(String name) {
         this.name = name;
     }
 
