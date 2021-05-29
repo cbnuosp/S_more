@@ -29,9 +29,10 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvPercent"
-            style="@style/AndH5SerifBoldLeft18Gray1"
             android:layout_width="wrap_content"
             android:layout_marginEnd="10dp"
+            android:textSize="20dp"
+            android:textColor="#000000"
             android:layout_height="wrap_content"
             android:text="30%"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +43,8 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvName"
             android:layout_marginStart="10dp"
-            style="@style/AndH5SerifBoldLeft18Gray1"
+            android:textSize="20dp"
+            android:textColor="#000000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="목표 2"
