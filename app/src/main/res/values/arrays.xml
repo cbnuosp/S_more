@@ -9,6 +9,7 @@
     </string-array>
 
     <string-array name="시작시간">
+        <item>Start Time</item>
         <item>09:00</item>
         <item>10:00</item>
         <item>11:00</item>
@@ -21,6 +22,7 @@
     </string-array>
 
     <string-array name="끝나는시간">
+        <item>Finish Time</item>
         <item>10:00</item>
         <item>11:00</item>
         <item>12:00</item>
@@ -31,4 +33,28 @@
         <item>17:00</item>
         <item>18:00</item>
     </string-array>
+
+    <string-array name="요일">
+        <item>Choose Day</item>
+        <item>월요일</item>
+        <item>화요일</item>
+        <item>수요일</item>
+        <item>목요일</item>
+        <item>금요일</item>
+    </string-array>
+
+    <string-array name="색">
+        <item>Chosse Color</item>
+        <item>LightBlue</item>
+        <item>LightCoral</item>
+        <item>LightCyan</item>
+        <item>LightGray</item>
+        <item>LightGreen</item>
+        <item>LightPink</item>
+        <item>LightSlateGray</item>
+        <item>LightSalmon</item>
+        <item>LightYellow</item>
+        <item>LightSteelBlue</item>
+    </string-array>
+
 </resources>

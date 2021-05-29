@@ -8,12 +8,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class Frag2_2_TimeTableListAdapter extends BaseAdapter {
+public class Frag2_3_TimeTableListAdapter extends BaseAdapter {
 
     private Context context;
-    private List<Frag2_2_List> tableList;
+    private List<Frag2_3_List> tableList;
 
-    public Frag2_2_TimeTableListAdapter(Context context, List<Frag2_2_List> tableList) {
+    public Frag2_3_TimeTableListAdapter(Context context, List<Frag2_3_List> tableList) {
         this.context = context;
         this.tableList = tableList;
     }
@@ -35,7 +35,8 @@ public class Frag2_2_TimeTableListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        View v=View.inflate(context,R.layout.frag2_2_list,null);
+        View v=View.inflate(context,R.layout.frag2_3_list,null);
+
         TextView nameText = (TextView) v.findViewById(R.id.name_text);
 
         nameText.setText(tableList.get(i).getName());
