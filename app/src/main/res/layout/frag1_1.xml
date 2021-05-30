@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F4F0ED"
+    android:background="@color/background2"
     tools:context=".Frag1_1">
 
     <!-- TODO: Update blank fragment layout -->
@@ -41,17 +41,21 @@
             tools:ignore="HardcodedText" />
     </LinearLayout>
 
+    <!-- 수평선 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/background2" >
 
-        <!--수평선-->
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:layout_marginTop="10dp"
-            android:background="#000000" />
-
+            android:background="@color/orange"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

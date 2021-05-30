@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F4F0ED"
+        android:background="@color/background2"
         android:orientation="horizontal"
         >
 
@@ -53,13 +53,16 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent"
-        android:background="#F4F0ED" >
+        android:background="@color/background2" >
 
-        <!--수평선-->
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="#000000"
+            android:background="@color/green"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp" />
 
 

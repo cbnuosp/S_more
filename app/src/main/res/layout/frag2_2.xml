@@ -316,7 +316,7 @@
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
                     android:backgroundTint="@color/yellow"
-                    android:text="추가하기"
+                    android:text="SAVE"
                     android:textColor="#ffffff"
                     android:textStyle="bold"/>
             </LinearLayout>
