@@ -59,8 +59,8 @@ public class ChallengeAdapter extends BaseRecyclerAdapter<ChallengeResponse, Cha
             binding.progress.setShowingPercentage(false);
             binding.progress.setMaximumPercentage(percent);
             //프로그래스바 색상
-            binding.progress.setProgressColor(Color.parseColor("#FF9E9B"));
-            binding.progress.setProgressBackgroundColor(Color.parseColor("#FFBCB9"));
+            binding.progress.setProgressColor(Color.parseColor("#3CB371"));
+            binding.progress.setProgressBackgroundColor(Color.parseColor("#f5f5f5"));
             //프로그래스바 타이틀
             binding.tvName.setText(data.getChallengeModel().getTitle());
             binding.tvPercent.setText(Math.round(percent*100) + "%");//반올림

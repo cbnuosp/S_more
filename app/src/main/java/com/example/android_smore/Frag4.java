@@ -50,7 +50,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class Frag4 extends Fragment {
     private View view;
     private TextView idtxt;
-    private TextView logout;
+    private Button logout;
     String idtext;
 
     FirebaseFirestore db;
@@ -66,7 +66,7 @@ public class Frag4 extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
         idtxt = (TextView)view.findViewById(R.id.userid);
-        logout = (TextView)view.findViewById(R.id.logoutbtn);
+        logout = (Button)view.findViewById(R.id.logoutbtn);
         idtext = user.getEmail();
         idtxt.setText(idtext);
 

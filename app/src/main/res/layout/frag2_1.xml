@@ -42,7 +42,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="" />
+                android:text=""
+                android:background="@color/yellow"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -51,7 +52,8 @@
                 android:gravity="center"
                 android:text="월"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/yellow"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -60,7 +62,8 @@
                 android:gravity="center"
                 android:text="화"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/yellow" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,7 +72,8 @@
                 android:gravity="center"
                 android:text="수"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/yellow" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -78,7 +82,8 @@
                 android:gravity="center"
                 android:text="목"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/yellow"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +92,8 @@
                 android:gravity="center"
                 android:text="금"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/yellow" />
 
         </TableRow>
 
@@ -103,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#EF9D9D"
+                android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
@@ -171,14 +177,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EF9D9D">
+            android:background="@color/yellow">
 
             <TextView
                 android:text="10"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#EF9D9D"
+                android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
@@ -246,14 +252,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EF9D9D">
+            android:background="@color/yellow">
 
             <TextView
                 android:text="11"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#EF9D9D"
+                android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
@@ -321,14 +327,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EF9D9D">
+            android:background="@color/yellow">
 
             <TextView
                 android:text="12"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#EF9D9D"
+                android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
@@ -396,14 +402,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EF9D9D">
+            android:background="@color/yellow">
 
             <TextView
                 android:text="13"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#EF9D9D"
+                android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
@@ -471,14 +477,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EF9D9D">
+            android:background="@color/yellow">
 
             <TextView
                 android:text="14"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#EF9D9D"
+                android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
@@ -546,14 +552,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EF9D9D">
+            android:background="@color/yellow">
 
             <TextView
                 android:text="15"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#EF9D9D"
+                android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
@@ -621,14 +627,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EF9D9D">
+            android:background="@color/yellow">
 
             <TextView
                 android:text="16"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#EF9D9D"
+                android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
@@ -696,14 +702,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#EF9D9D">
+            android:background="@color/yellow">
 
             <TextView
                 android:text="17"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#EF9D9D"
+                android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"

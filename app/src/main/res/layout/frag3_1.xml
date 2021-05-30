@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginEnd="0dp"
     android:layout_marginRight="0dp"
-    android:background="#F4F0ED"
+    android:background="@color/background2"
     android:orientation="vertical">
 
     <LinearLayout
@@ -49,12 +49,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!--수평선-->
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:layout_marginTop="10dp"
-            android:background="#000000" />
+            android:background="@color/green"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
 
@@ -67,19 +70,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="30dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/red"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="0"
                     android:text="Title"
                     android:textColor="#000000"
@@ -87,27 +98,17 @@
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="#EF9D9D" />
-
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/c_title"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
@@ -118,9 +119,8 @@
                     android:hint="제목을 입력하세요."
                     android:inputType=""
                     android:privateImeOptions="defaultInputmode=korean"
-                    android:background="@drawable/frag3_1_edittext"
+                    android:background="@drawable/redbtn"
                     android:textSize="20sp"
-                    android:textCursorDrawable="@drawable/edit_text_cursor"
                     android:maxLength="30" />
 
             </LinearLayout>
@@ -128,35 +128,27 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/orange"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="10dp"
                     android:text="Schedule"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_marginEnd="125dp"
-                    android:layout_marginRight="125dp"
-                    android:background="#EF9D9D" />
 
             </LinearLayout>
 
@@ -175,10 +167,9 @@
                     android:layout_marginRight="0dp"
                     android:layout_weight="2"
                     android:width="10dp"
-                    android:background="@drawable/frag3_1_btn1"
+                    android:background="@drawable/orangebtn"
                     android:hint="시작날짜"
-                    android:textSize="17sp"
-                    app:backgroundTint="#FFFFFF" />
+                    android:textSize="17sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -201,10 +192,9 @@
                     android:layout_marginRight="0dp"
                     android:layout_weight="2"
                     android:width="10dp"
-                    android:background="@drawable/frag3_1_btn1"
+                    android:background="@drawable/orangebtn"
                     android:hint="종료날짜"
-                    android:textSize="17sp"
-                    app:backgroundTint="#FFFFFF" />
+                    android:textSize="17sp"/>
 
                 <View
                     android:layout_width="0dp"
@@ -216,35 +206,27 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/yellow" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="10dp"
                     android:text="Task"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_marginEnd="82dp"
-                    android:layout_marginRight="82dp"
-                    android:background="#EF9D9D" />
 
             </LinearLayout>
 
@@ -257,19 +239,18 @@
                 <EditText
                     android:id="@+id/add_c_list_task"
                     android:layout_width="298dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginRight="10dp"
                     android:width="1dp"
-                    android:background="@drawable/frag3_1_edittext"
+                    android:background="@drawable/yellowbtn"
                     android:hint="세부목표를 입력하세요."
                     android:inputType=""
                     android:paddingLeft="10dp"
                     android:privateImeOptions="defaultInputmode=korean"
-                    android:textCursorDrawable="@drawable/edit_text_cursor"
                     android:textSize="20sp"
                     android:maxLength="30" />
 
@@ -279,7 +260,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="22dp"
                     android:layout_marginEnd="35dp"
                     android:layout_marginRight="35dp"
                     android:background="#00FFFFFF"
@@ -306,35 +287,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/green" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="10dp"
                     android:text="Memo"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_marginEnd="98dp"
-                    android:layout_marginRight="98dp"
-                    android:background="#EF9D9D" />
 
             </LinearLayout>
 
@@ -360,8 +334,7 @@
                     android:gravity="top"
                     android:privateImeOptions="defaultInputmode=korean"
                     android:textSize="20sp"
-                    android:background="@drawable/memo_border"
-                    android:textCursorDrawable="@drawable/edit_text_cursor"
+                    android:background="@drawable/greenbtn"
                     android:maxLength="300"/>
 
             </LinearLayout>
@@ -369,21 +342,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:layout_marginTop="40dp">
 
                 <Button
-                    android:layout_marginTop="30dp"
-                    android:paddingBottom="30dp"
-                    android:gravity="center|center"
-                    android:paddingTop="20dp"
                     android:id="@+id/btn_Ch_Add"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="#EF9D9D"
-                    android:text="추가하기"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:backgroundTint="@color/green"
+                    android:text="SAVE"
                     android:textColor="#ffffff"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:layout_marginBottom="30dp"/>
             </LinearLayout>
 
 

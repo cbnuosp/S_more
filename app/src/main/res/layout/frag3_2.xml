@@ -9,7 +9,7 @@
     android:layout_height="match_parent"
     android:layout_marginEnd="0dp"
     android:layout_marginRight="0dp"
-    android:background="#F4F0ED"
+    android:background="@color/background2"
     android:orientation="vertical">
 
     <LinearLayout
@@ -47,17 +47,21 @@
 
     </LinearLayout>
 
+    <!-- 수평선 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/background2" >
 
-        <!--수평선-->
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:layout_marginTop="10dp"
-            android:background="#000000" />
-
+            android:background="@color/green"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp" />
     </LinearLayout>
 
     <ScrollView
@@ -74,34 +78,28 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/red"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
                     android:text="Schedule"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_marginEnd="125dp"
-                    android:layout_marginRight="125dp"
-                    android:background="#EF9D9D" />
 
             </LinearLayout>
 
@@ -120,10 +118,9 @@
                     android:layout_marginRight="0dp"
                     android:layout_weight="2"
                     android:width="10dp"
-                    android:background="@drawable/frag3_1_btn1"
+                    android:background="@drawable/redbtn"
                     android:hint="시작날짜"
-                    android:textSize="17sp"
-                    app:backgroundTint="#FFFFFF" />
+                    android:textSize="17sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -146,10 +143,9 @@
                     android:layout_marginRight="0dp"
                     android:layout_weight="2"
                     android:width="10dp"
-                    android:background="@drawable/frag3_1_btn1"
+                    android:background="@drawable/redbtn"
                     android:hint="종료날짜"
-                    android:textSize="17sp"
-                    app:backgroundTint="#FFFFFF" />
+                    android:textSize="17sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -161,35 +157,27 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/orange"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="10dp"
                     android:text="Task"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_marginEnd="82dp"
-                    android:layout_marginRight="82dp"
-                    android:background="#EF9D9D" />
 
             </LinearLayout>
 
@@ -205,36 +193,27 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/yellow"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="10dp"
                     android:text="Memo"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_marginEnd="98dp"
-                    android:layout_marginRight="98dp"
-                    android:background="#EF9D9D" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -258,7 +237,7 @@
                     android:gravity="top"
                     android:privateImeOptions="defaultInputmode=korean"
                     android:textSize="20sp"
-                    android:background="@drawable/memo_border"
+                    android:background="@drawable/yellowbtn"
                     android:textCursorDrawable="@drawable/edit_text_cursor"
                     android:maxLength="300"/>
 
@@ -270,34 +249,39 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <!--버튼 위치 및 디자인 나중에 설정-->
                 <Button
-                    android:id="@+id/btn_delete"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btn_save"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
-                    android:background="#A36C6C"
-                    android:text="DELETE"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:backgroundTint="@color/green"
+                    android:text="SAVE"
                     android:textColor="#ffffff"
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/btn_save"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btn_delete"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="30dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
-                    android:background="#EF9D9D"
-                    android:text="SAVE"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:backgroundTint="@color/green_200"
+                    android:text="DELETE"
                     android:textColor="#ffffff"
                     android:textStyle="bold" />
             </LinearLayout>
