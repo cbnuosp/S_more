@@ -6,14 +6,12 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,22 +23,19 @@ import java.util.ArrayList;
  */
 public class Frag1_1 extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private View view;
     private TextView emptypage;
     private Button plusButton;
 
-    //    DatabaseReference reference;
+    // DatabaseReference reference;
     private RecyclerView ourdoes;
     private ArrayList<Frag1_3> list=new ArrayList<Frag1_3>();
-    private Adapter1 adapter1;
+    private Frag1_ToDoListAdapter adapter1;
     private LinearLayoutManager layoutManager;
 
     /**
@@ -77,12 +72,11 @@ public class Frag1_1 extends Fragment {
 
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
-        // Inflate the layout for this fragment
-        super.onCreate(savedInstanceState);
-        view=inflater.inflate(R.layout.frag1_1,container,false);
-        emptypage = view.findViewById(R.id.emptypage);
+        ViewGroup rootView=(ViewGroup)inflater.inflate(R.layout.frag1_1,container,false);
+
+        emptypage = rootView.findViewById(R.id.emptypage);
         ImageButton plusButton;
-        plusButton=(ImageButton) view.findViewById(R.id.plusButton);
+        plusButton=(ImageButton) rootView.findViewById(R.id.plusButton);
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
@@ -90,21 +84,16 @@ public class Frag1_1 extends Fragment {
             }
         });
 
-        ViewGroup rootView=(ViewGroup)inflater.inflate(R.layout.frag1_1,container,false);
         ourdoes=(RecyclerView) rootView.findViewById(R.id.ourdoes);
 
-        layoutManager = new LinearLayoutManager(getActivity());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
-        adapter1=new Adapter1(getActivity(),list);
-
-        ourdoes.setLayoutManager(layoutManager);
+        list = new ArrayList<Frag1_3>();
+        ourdoes.setHasFixedSize(true);
+        adapter1=new Frag1_ToDoListAdapter(getActivity(),list);
+        ourdoes.setLayoutManager(new LinearLayoutManager(getActivity()));
         ourdoes.setAdapter(adapter1);
 
-//        // working with data
-//        ourdoes = view.findViewById(R.id.ourdoes);
-//        ourdoes.setLayoutManager(new LinearLayoutManager(content));
-//        list = new ArrayList<Frag1_3>();
+
+
 
 //        // get data from firebase
 //        // FirebaseApp.initializeApp(this);
@@ -130,6 +119,6 @@ public class Frag1_1 extends Fragment {
 //                Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
 //            }
 //        });
-        return view;
+        return rootView;
     }
 }
