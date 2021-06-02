@@ -55,7 +55,8 @@ public class Frag1 extends Fragment {
         materialCalendarView.addDecorators(
                 new SundayDecorator(), //일요일 색 설정
                 new SaturdayDecorator(), //토요일 색 설정
-                new todayDecorator() //오늘 색 설정
+                new todayDecorator(), //오늘 색 설정
+                new DayDecorator()
         );
     }
 
@@ -130,10 +131,26 @@ public class Frag1 extends Fragment {
         public void decorate( DayViewFacade view ) {
             view.addSpan(new StyleSpan(Typeface.BOLD));
             view.addSpan(new RelativeSizeSpan(1.4f));
-            view.addSpan(new ForegroundColorSpan(Color.parseColor("#9370DB")));
+            view.addSpan(new ForegroundColorSpan(Color.parseColor("#FFA500")));
         }
         public void setDate(Date date){
             this.date = CalendarDay.from(date);
+        }
+    }
+    //전체날짜디자인
+    private class DayDecorator implements DayViewDecorator {
+        private final Calendar calendar = Calendar.getInstance();
+
+        @Override
+        public boolean shouldDecorate( CalendarDay day ) {
+            return true;
+        }
+
+        @Override
+        public void decorate( DayViewFacade view ) {
+//            view.addSpan(new StyleSpan(Typeface.BOLD));
+            view.addSpan(new RelativeSizeSpan(1.3f));
+
         }
     }
 }

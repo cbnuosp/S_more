@@ -28,17 +28,18 @@ public class Frag1_3 extends Fragment {
     String titledoes;
     String datedoes;
     String descdoes;
+    String keydoes;
 
-    public Frag1_3( String titledoes, String datedoes, String descdoes ) {
+    public Frag1_3( String titledoes, String datedoes, String descdoes, String keydoes ) {
         this.titledoes = titledoes;
         this.datedoes = datedoes;
         this.descdoes = descdoes;
-//        this.keydoes = keydoes;
+        this.keydoes = keydoes;
     }
 
-//    public String getKeydoes() {
-//        return keydoes;
-//    }
+    public String getKeydoes() {
+        return keydoes;
+    }
 
     public String getTitledoes() {
 
