@@ -1,5 +1,6 @@
 package com.example.android_smore;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -12,7 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.net.ConnectException;
 import java.util.Random;
 
 /**
@@ -31,12 +34,13 @@ public class Frag1_2 extends Fragment {
     private String mParam1;
     private String mParam2;
     private View view;
+    private Context context;
     TextView titlepage, addtitle, adddesc, adddate;
     EditText titledoes, descdoes, datedoes;
     Button btnSaveTask, btnCancel;
     //DatabaseReference reference;
-    //Integer doesNum = new Random().nextInt();
-    //String keydoes = Integer.toString(doesNum);
+    Integer doesNum = new Random().nextInt();
+    String keydoes = Integer.toString(doesNum);
 
     public Frag1_2() {
         // Required empty public constructor
@@ -72,6 +76,7 @@ public class Frag1_2 extends Fragment {
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
         view=inflater.inflate(R.layout.frag1_2,container,false);
+        context=container.getContext(); //DB 전 확인용
         titlepage=view.findViewById(R.id.titlepage);
 
         addtitle=view.findViewById(R.id.titlepage);
@@ -85,12 +90,28 @@ public class Frag1_2 extends Fragment {
         btnSaveTask = view.findViewById(R.id.btnSaveTask);
         btnCancel = view.findViewById(R.id.btnCancel);
 
+        btnSaveTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View view ) {
+                //();
+
+                Toast.makeText(context,"추가되었습니다.",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View view ) {
+                getFragmentManager().beginTransaction().replace(R.id.main_frame,new Frag1_1()).commit();
+            }
+        });
+
         ImageButton closeButton;
         closeButton=(ImageButton) view.findViewById(R.id.closeButton);
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
-                getFragmentManager().beginTransaction().replace(R.id.main_frame,new Frag1()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.main_frame,new Frag1_1()).commit();
 
                 // insert data to database
 //                reference = FirebaseDatabase.getInstance().getReference().child("DoesApp").

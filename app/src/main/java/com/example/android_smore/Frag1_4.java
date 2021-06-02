@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +27,10 @@ public class Frag1_4 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private View view;
+    EditText titledoes, descdoes, datedoes;
+    Button btnSaveUpdate, btnDelete;
+    //DatabaseReference reference;
 
     public Frag1_4() {
         // Required empty public constructor
@@ -58,7 +66,29 @@ public class Frag1_4 extends Fragment {
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState ) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag1_4, container, false);
+        view=inflater.inflate(R.layout.frag1_4,container,false);
+
+        titledoes = view.findViewById(R.id.titledoes);
+        descdoes = view.findViewById(R.id.descdoes);
+        datedoes = view.findViewById(R.id.datedoes);
+
+        btnSaveUpdate = view.findViewById(R.id.btnSaveTask);
+        btnDelete = view.findViewById(R.id.btnCancel);
+
+        titledoes.setText(getArguments().getString("titledoes"));
+        descdoes.setText(getArguments().getString("descdoes"));
+        datedoes.setText(getArguments().getString("datedoes"));
+
+        ImageButton closeButton;
+        closeButton=(ImageButton) view.findViewById(R.id.closeButton);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View view ) {
+                getFragmentManager().beginTransaction().replace(R.id.main_frame,new Frag1_1()).commit();
+
+            }
+        });
+
+        return view;
     }
 }
