@@ -1,6 +1,8 @@
 package com.example.android_smore;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,11 +26,17 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.SetOptions;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.content.ContentValues.TAG;
 
@@ -135,6 +143,7 @@ public class Frag2_2 extends Fragment {
 
                     Frag2_Schedule scheduledata = new Frag2_Schedule();
 
+                    // 저장된 데이터가 아닐 때
                     if(scheduledata.validate(data)==true) {
                         db.collection("Timetable")
                                 .whereEqualTo("select",true)
@@ -145,27 +154,15 @@ public class Frag2_2 extends Fragment {
                                         if(task.isSuccessful()){
                                             for(QueryDocumentSnapshot document : task.getResult()) {
                                                 if(document.get("id").toString().equals(uid)){  // 로그인된 아이디일때
-                                                    Log.d(TAG, document.getId());
+                                                    Log.v("정보추가될문서 : ",document.getId());
 
-                                                    db.collection("Timetable").document(document.getId())
-                                                            .update("coursedata", Arrays.asList(data))
-                                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                @Override
-                                                                public void onSuccess(Void aVoid) {
-                                                                    Log.d(TAG,document.getId()+" "+data+" course data DB에 저장 완료");
-                                                                    FragmentManager fragmentManager = getChildFragmentManager();
-                                                                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                                                    fragmentTransaction.replace(R.id.fragment, new Frag2_1());
-                                                                    fragmentTransaction.commit();
-                                                                }
-                                                            })
-                                                            .addOnFailureListener(new OnFailureListener() {
-                                                                @Override
-                                                                public void onFailure(@NonNull Exception e) {
-                                                                    Log.w(TAG, "course data DB 저장 오류");
-                                                                }
-                                                            });
+                                                    DocumentReference uidDocumentRef = db.collection("Timetable").document(document.getId());
+                                                    uidDocumentRef.update("coursedata", FieldValue.arrayUnion(data));
 
+                                                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                                    fragmentTransaction.replace(R.id.fragment, new Frag2_1());
+                                                    fragmentTransaction.commit();
                                                 }
                                             }
                                         }
@@ -245,7 +242,6 @@ public class Frag2_2 extends Fragment {
                    8번 LightSalmon
                    9번 LightYellow
                    10번 LightSteelBlue */
-                Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                 color = spinnercolor.getSelectedItem().toString();
                 switch (spinnercolor.getSelectedItemPosition()) {
                     case 0:

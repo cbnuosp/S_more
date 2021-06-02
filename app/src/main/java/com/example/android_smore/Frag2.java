@@ -101,7 +101,6 @@ public class Frag2 extends Fragment {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 // 삭제 선택시
                                 // 선택된 시간표 data 제거
-                                Log.d(TAG,"2");
                                 db.collection("Timetable")
                                         .whereEqualTo("select",true)
                                         .get()
@@ -110,7 +109,7 @@ public class Frag2 extends Fragment {
                                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                                 if (task.isSuccessful()){
                                                     for(QueryDocumentSnapshot document : task.getResult()) {
-                                                        Log.d(TAG, "선택된 문서 :"+document.getId() + "=>" + document.getData());
+                                                        Log.d(TAG, "선택된 문서 : "+document.getId() + "=>" + document.getData());
                                                         if (document.get("id").toString().equals(uid)) {
                                                             Log.d(TAG, "삭제될 문서 : "+document.getId() + "=>" + document.getData());
                                                             db.collection("Timetable").document(document.getId())
@@ -129,43 +128,6 @@ public class Frag2 extends Fragment {
                                                                     });
                                                         }
                                                     }
-                                                    // 다음 시간표 선택
-                                                    db.collection("Timetable")
-                                                            .whereEqualTo("select",false)
-                                                            .get()
-                                                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                                                @Override
-                                                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                                                    if(task.isSuccessful()) {
-                                                                        for (QueryDocumentSnapshot document : task.getResult()) {
-                                                                            Log.d(TAG, "다음 선택될 시간표 :"+document.getId() + " => " + document.getData());
-                                                                            if(document.get("id").toString().equals(uid)){
-                                                                                Log.d(TAG, "다음 선택될 시간표 해당 아이디 :"+document.getId() + " => " + document.getData());
-                                                                                timetablenametxt.setText(document.get("tablename").toString());
-                                                                                DocumentReference changeref = db.collection("Timetable").document(document.getId());
-                                                                                changeref.update("select", true)
-                                                                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                                            @Override
-                                                                                            public void onSuccess(Void aVoid) {
-                                                                                                Log.d(TAG, "DocumentSnapshot successfully updated!");
-                                                                                            }
-
-                                                                                        })
-                                                                                        .addOnFailureListener(new OnFailureListener() {
-                                                                                            @Override
-                                                                                            public void onFailure(@NonNull Exception e) {
-                                                                                                Log.w(TAG, "Error updating document", e);
-                                                                                            }
-                                                                                        });
-                                                                                break;
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                    else{
-                                                                        Log.d(TAG,"Error getting documents : ",task.getException());
-                                                                    }
-                                                                }
-                                                            });
                                                 }
                                                 else{
                                                     Log.d(TAG,"Error getting documents : ",task.getException());
