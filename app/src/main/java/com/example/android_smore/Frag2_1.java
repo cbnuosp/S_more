@@ -19,6 +19,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.List;
+
 import static android.content.ContentValues.TAG;
 
 public class Frag2_1 extends Fragment {
@@ -29,6 +31,7 @@ public class Frag2_1 extends Fragment {
     private TextView friday[] = new TextView[10];
 
     private Frag2_Schedule schedule = new Frag2_Schedule();
+
     private String timetableid;
 
     @Override
@@ -99,7 +102,6 @@ public class Frag2_1 extends Fragment {
         timetablenametxt = (TextView) v.findViewById(R.id.timetablename_text);
 
 
-
         // 시간표 이름 변경
         db.collection("Timetable")
                 .whereEqualTo("select",true)
@@ -109,9 +111,38 @@ public class Frag2_1 extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if(task.isSuccessful()){
                             for(QueryDocumentSnapshot document : task.getResult()) {
-                                if(document.get("id").toString().equals(uid)){  // 로그인된 아이디일때
+                                // 로그인된 아이디일때
+                                if(document.get("id").toString().equals(uid)){
                                     timetablenametxt.setText(document.get("tablename").toString());
+                                    if(document.get("coursedata").toString().equals("[null]")){
+                                        Log.v("시간표 채우기",document.get("coursedata").toString());
+                                        break       ;
+                                    }
+                                    else {
+                                        // 시간표 채우기
+                                        String data = document.get("coursedata").toString();
+                                        Log.v("시간표 채우기",data);
+                                        String coursedata = data.substring(1, data.length() - 1);
+                                        Log.v("시간표 채우기",coursedata);
+
+                                        String[] coursearray = coursedata.split(",");
+                                        for (int i = 0; i < coursearray.length; i++) {
+
+                                            int index = coursearray[i].indexOf("cn:");
+                                            int index2 = coursearray[i].indexOf("pn:");
+                                            int index3 = coursearray[i].indexOf("co:");
+
+                                            String coursetime = coursearray[i].substring(0, index);
+                                            String coursename = coursearray[i].substring(index + 3, index2);
+                                            String professorname = coursearray[i].substring(index2 + 3, index3);
+                                            String coursecolor = coursearray[i].substring(index3 + 3);
+
+                                            schedule.addSchedule(coursetime, coursename, professorname, coursecolor);
+                                        }
+                                        schedule.setting(monday, tuesday, wednesday, thursday, friday, getContext());
+                                    }
                                 }
+
                             }
                         }
                         else{

@@ -27,6 +27,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
@@ -134,7 +135,7 @@ public class Frag2_3 extends Fragment {
 
                                 // firebase data put
                                 String docid = timetablename.concat("_"+uid);
-                                Frag2_TableData data = new Frag2_TableData(timetablename,uid,true,null);
+                                Frag2_TableData data = new Frag2_TableData(timetablename,uid,true, Arrays.asList("null"));
 
                                 // Data 추가
                                 db.collection("Timetable").document(docid)

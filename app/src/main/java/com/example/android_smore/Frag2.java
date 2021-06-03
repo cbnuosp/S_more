@@ -134,6 +134,35 @@ public class Frag2 extends Fragment {
                                                 }
                                             }
                                         });
+                                db.collection("Timetable")
+                                        .whereEqualTo("id",uid)
+                                        .get()
+                                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                if(task.isSuccessful()){
+                                                    for(QueryDocumentSnapshot document : task.getResult()) {
+                                                        db.collection("Timetable").document(document.getId())
+                                                                .update("select",true)
+                                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                    @Override
+                                                                    public void onSuccess(Void aVoid) {
+                                                                        Log.v("다음시간표 선택완료",document.getId());
+                                                                    }
+                                                                })
+                                                                .addOnFailureListener(new OnFailureListener() {
+                                                                    @Override
+                                                                    public void onFailure(@NonNull Exception e) {
+                                                                        Log.v("다음시간표 선택실패","fail");
+                                                                    }
+                                                                });
+                                                    }
+                                                }
+                                                else{
+                                                    Log.d(TAG,"Error getting documents : ",task.getException());
+                                                }
+                                            }
+                                        });
                             }
                         });
                 /*builder.setPositiveButton("취소",
