@@ -138,13 +138,13 @@ public class Frag2_2 extends Fragment {
                         time=time.concat(temp);
                     }
 
-                    data=day+":"+time+":"+coursename+":"+professorname+":"+color;
+                    data=day+":"+time+"cn:"+coursename+"pn:"+professorname+"co:"+color;
                     Log.v("추가될 정보",data);
 
                     Frag2_Schedule scheduledata = new Frag2_Schedule();
 
                     // 저장된 데이터가 아닐 때
-                    if(scheduledata.validate(data)==true) {
+                    if(scheduledata.validate(day)==true) {
                         db.collection("Timetable")
                                 .whereEqualTo("select",true)
                                 .get()
