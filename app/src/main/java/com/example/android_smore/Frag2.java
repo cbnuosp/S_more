@@ -109,9 +109,9 @@ public class Frag2 extends Fragment {
                                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                                 if (task.isSuccessful()){
                                                     for(QueryDocumentSnapshot document : task.getResult()) {
-                                                        Log.d(TAG, "선택된 문서 : "+document.getId() + "=>" + document.getData());
+                                                        Log.v("선택된 문서",document.getId() + "=>" + document.getData());
                                                         if (document.get("id").toString().equals(uid)) {
-                                                            Log.d(TAG, "삭제될 문서 : "+document.getId() + "=>" + document.getData());
+                                                            Log.v("삭제될 문서",document.getId() + "=>" + document.getData());
                                                             db.collection("Timetable").document(document.getId())
                                                                     .delete()
                                                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -156,6 +156,7 @@ public class Frag2 extends Fragment {
                                                                         Log.v("다음시간표 선택실패","fail");
                                                                     }
                                                                 });
+                                                        break;
                                                     }
                                                 }
                                                 else{

@@ -15,7 +15,7 @@ public class Frag2_Schedule {
     private String friday[] = new String[10];
 
     public Frag2_Schedule(){
-        for(int i=1;i<10;i++){
+        for(int i=0;i<10;i++){
             monday[i]="";
             tuesday[i]="";
             wednesday[i]="";
@@ -322,10 +322,35 @@ public class Frag2_Schedule {
         return true;
     }
 
-    public void setting(TextView[] monday, TextView[] tuesday, TextView[] wednesday, TextView[] thursday, TextView[] friday, Context context){
-        Integer index;
+    public void setting(Frag2_1_AutoResizeTextView[] monday, Frag2_1_AutoResizeTextView[] tuesday, Frag2_1_AutoResizeTextView[] wednesday, Frag2_1_AutoResizeTextView[] thursday, Frag2_1_AutoResizeTextView[] friday, Context context){
+        int index;
         String coursetext;
         String colortext;
+
+        int maxLength=0;
+        String maxString="";
+        for(int i=0;i<10;i++){
+            if(this.monday[i].length()>maxLength) {
+                maxLength=this.monday[i].length();
+                maxString=this.monday[i];
+            }
+            if(this.tuesday[i].length()>maxLength) {
+                maxLength=this.tuesday[i].length();
+                maxString=this.tuesday[i];
+            }
+            if(this.wednesday[i].length()>maxLength) {
+                maxLength=this.wednesday[i].length();
+                maxString=this.wednesday[i];
+            }
+            if(this.thursday[i].length()>maxLength) {
+                maxLength=this.thursday[i].length();
+                maxString=this.thursday[i];
+            }
+            if(this.friday[i].length()>maxLength) {
+                maxLength=this.friday[i].length();
+                maxString=this.friday[i];
+            }
+        }
 
         for(int i=1;i<10;i++)
         {
@@ -356,6 +381,9 @@ public class Frag2_Schedule {
                     monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
 
             }
+            else{
+                monday[i].setText(maxString);
+            }
             if(!this.tuesday[i].equals(""))
             {
                 index=this.tuesday[i].indexOf(':');
@@ -381,6 +409,9 @@ public class Frag2_Schedule {
                     tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightYellow));
                 if(colortext.equals("LightSteelBlue"))
                     tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
+            }
+            else{
+                tuesday[i].setText(maxString);
             }
             if(!this.wednesday[i].equals(""))
             {
@@ -408,6 +439,10 @@ public class Frag2_Schedule {
                 if(colortext.equals("LightSteelBlue"))
                     wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
             }
+            else{
+                wednesday[i].setText(maxString);
+            }
+
             if(!this.thursday[i].equals(""))
             {
                 index=this.thursday[i].indexOf(':');
@@ -434,33 +469,46 @@ public class Frag2_Schedule {
                 if(colortext.equals("LightSteelBlue"))
                     thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
             }
-            if(!this.friday[i].equals(""))
-            {
-                index=this.friday[i].indexOf(':');
-                coursetext=this.friday[i].substring(0,index);
-                colortext=this.friday[i].substring(index+1);
+            else{
+                thursday[i].setText(maxString);
+            }
+
+            if(!this.friday[i].equals("")) {
+                index = this.friday[i].indexOf(':');
+                coursetext = this.friday[i].substring(0, index);
+                colortext = this.friday[i].substring(index + 1);
                 friday[i].setText(coursetext);
 
-                if(colortext.equals("LightBlue"))
+                if (colortext.equals("LightBlue"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightBlue));
-                if(colortext.equals("LightCoral"))
+                if (colortext.equals("LightCoral"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCoral));
-                if(colortext.equals("LightCyan"))
+                if (colortext.equals("LightCyan"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCyan));
-                if(colortext.equals("LightGray"))
+                if (colortext.equals("LightGray"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGray));
-                if(colortext.equals("LightGreen"))
+                if (colortext.equals("LightGreen"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGreen));
-                if(colortext.equals("LightPink"))
+                if (colortext.equals("LightPink"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPink));
-                if(colortext.equals("LightSlateGray"))
+                if (colortext.equals("LightSlateGray"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSlateGray));
-                if(colortext.equals("LightYellow"))
+                if (colortext.equals("LightYellow"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightYellow));
-                if(colortext.equals("LightSteelBlue"))
+                if (colortext.equals("LightSteelBlue"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
             }
+            else{
+                friday[i].setText(maxString);
+            }
+
+            monday[i].resizeText();
+            tuesday[i].resizeText();
+            wednesday[i].resizeText();
+            thursday[i].resizeText();
+            friday[i].resizeText();
         }
+
     }
 
 }
