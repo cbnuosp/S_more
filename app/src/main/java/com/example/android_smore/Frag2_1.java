@@ -24,11 +24,11 @@ import java.util.List;
 import static android.content.ContentValues.TAG;
 
 public class Frag2_1 extends Fragment {
-    private TextView monday[] = new TextView[10];
-    private TextView tuesday[] = new TextView[10];
-    private TextView wednesday[] = new TextView[10];
-    private TextView thursday[] = new TextView[10];
-    private TextView friday[] = new TextView[10];
+    private Frag2_1_AutoResizeTextView monday[] = new Frag2_1_AutoResizeTextView[10];
+    private Frag2_1_AutoResizeTextView tuesday[] = new Frag2_1_AutoResizeTextView[10];
+    private Frag2_1_AutoResizeTextView wednesday[] = new Frag2_1_AutoResizeTextView[10];
+    private Frag2_1_AutoResizeTextView thursday[] = new Frag2_1_AutoResizeTextView[10];
+    private Frag2_1_AutoResizeTextView friday[] = new Frag2_1_AutoResizeTextView[10];
 
     private Frag2_Schedule schedule = new Frag2_Schedule();
 
@@ -37,55 +37,55 @@ public class Frag2_1 extends Fragment {
     @Override
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
-        monday[1]=(TextView) getView().findViewById(R.id.monday1);
-        monday[2]=(TextView) getView().findViewById(R.id.monday2);
-        monday[3]=(TextView) getView().findViewById(R.id.monday3);
-        monday[4]=(TextView) getView().findViewById(R.id.monday4);
-        monday[5]=(TextView) getView().findViewById(R.id.monday5);
-        monday[6]=(TextView) getView().findViewById(R.id.monday6);
-        monday[7]=(TextView) getView().findViewById(R.id.monday7);
-        monday[8]=(TextView) getView().findViewById(R.id.monday8);
-        monday[9]=(TextView) getView().findViewById(R.id.monday9);
+        monday[1]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.monday1);
+        monday[2]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.monday2);
+        monday[3]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.monday3);
+        monday[4]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.monday4);
+        monday[5]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.monday5);
+        monday[6]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.monday6);
+        monday[7]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.monday7);
+        monday[8]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.monday8);
+        monday[9]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.monday9);
 
-        tuesday[1]=(TextView) getView().findViewById(R.id.tuesday1);
-        tuesday[2]=(TextView) getView().findViewById(R.id.tuesday2);
-        tuesday[3]=(TextView) getView().findViewById(R.id.tuesday3);
-        tuesday[4]=(TextView) getView().findViewById(R.id.tuesday4);
-        tuesday[5]=(TextView) getView().findViewById(R.id.tuesday5);
-        tuesday[6]=(TextView) getView().findViewById(R.id.tuesday6);
-        tuesday[7]=(TextView) getView().findViewById(R.id.tuesday7);
-        tuesday[8]=(TextView) getView().findViewById(R.id.tuesday8);
-        tuesday[9]=(TextView) getView().findViewById(R.id.tuesday9);
+        tuesday[1]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.tuesday1);
+        tuesday[2]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.tuesday2);
+        tuesday[3]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.tuesday3);
+        tuesday[4]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.tuesday4);
+        tuesday[5]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.tuesday5);
+        tuesday[6]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.tuesday6);
+        tuesday[7]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.tuesday7);
+        tuesday[8]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.tuesday8);
+        tuesday[9]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.tuesday9);
 
-        wednesday[1]=(TextView) getView().findViewById(R.id.wednesday1);
-        wednesday[2]=(TextView) getView().findViewById(R.id.wednesday2);
-        wednesday[3]=(TextView) getView().findViewById(R.id.wednesday3);
-        wednesday[4]=(TextView) getView().findViewById(R.id.wednesday4);
-        wednesday[5]=(TextView) getView().findViewById(R.id.wednesday5);
-        wednesday[6]=(TextView) getView().findViewById(R.id.wednesday6);
-        wednesday[7]=(TextView) getView().findViewById(R.id.wednesday7);
-        wednesday[8]=(TextView) getView().findViewById(R.id.wednesday8);
-        wednesday[9]=(TextView) getView().findViewById(R.id.wednesday9);
+        wednesday[1]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.wednesday1);
+        wednesday[2]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.wednesday2);
+        wednesday[3]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.wednesday3);
+        wednesday[4]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.wednesday4);
+        wednesday[5]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.wednesday5);
+        wednesday[6]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.wednesday6);
+        wednesday[7]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.wednesday7);
+        wednesday[8]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.wednesday8);
+        wednesday[9]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.wednesday9);
 
-        thursday[1]=(TextView) getView().findViewById(R.id.thursday1);
-        thursday[2]=(TextView) getView().findViewById(R.id.thursday2);
-        thursday[3]=(TextView) getView().findViewById(R.id.thursday3);
-        thursday[4]=(TextView) getView().findViewById(R.id.thursday4);
-        thursday[5]=(TextView) getView().findViewById(R.id.thursday5);
-        thursday[6]=(TextView) getView().findViewById(R.id.thursday6);
-        thursday[7]=(TextView) getView().findViewById(R.id.thursday7);
-        thursday[8]=(TextView) getView().findViewById(R.id.thursday8);
-        thursday[9]=(TextView) getView().findViewById(R.id.thursday9);
+        thursday[1]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.thursday1);
+        thursday[2]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.thursday2);
+        thursday[3]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.thursday3);
+        thursday[4]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.thursday4);
+        thursday[5]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.thursday5);
+        thursday[6]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.thursday6);
+        thursday[7]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.thursday7);
+        thursday[8]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.thursday8);
+        thursday[9]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.thursday9);
 
-        friday[1]=(TextView) getView().findViewById(R.id.friday1);
-        friday[2]=(TextView) getView().findViewById(R.id.friday2);
-        friday[3]=(TextView) getView().findViewById(R.id.friday3);
-        friday[4]=(TextView) getView().findViewById(R.id.friday4);
-        friday[5]=(TextView) getView().findViewById(R.id.friday5);
-        friday[6]=(TextView) getView().findViewById(R.id.friday6);
-        friday[7]=(TextView) getView().findViewById(R.id.friday7);
-        friday[8]=(TextView) getView().findViewById(R.id.friday8);
-        friday[9]=(TextView) getView().findViewById(R.id.friday9);
+        friday[1]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.friday1);
+        friday[2]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.friday2);
+        friday[3]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.friday3);
+        friday[4]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.friday4);
+        friday[5]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.friday5);
+        friday[6]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.friday6);
+        friday[7]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.friday7);
+        friday[8]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.friday8);
+        friday[9]=(Frag2_1_AutoResizeTextView) getView().findViewById(R.id.friday9);
     }
 
     @Nullable
@@ -115,14 +115,14 @@ public class Frag2_1 extends Fragment {
                                 if(document.get("id").toString().equals(uid)){
                                     timetablenametxt.setText(document.get("tablename").toString());
                                     if(document.get("coursedata").toString().equals("[null]")){
-                                        Log.v("시간표 채우기",document.get("coursedata").toString());
-                                        break       ;
+                                        Log.v("시간표 데이더 없음",document.get("coursedata").toString());
+                                        break;
                                     }
                                     else {
                                         // 시간표 채우기
                                         String data = document.get("coursedata").toString();
                                         Log.v("시간표 채우기",data);
-                                        String coursedata = data.substring(1, data.length() - 1);
+                                        String coursedata = data.substring(6, data.length() - 1);
                                         Log.v("시간표 채우기",coursedata);
 
                                         String[] coursearray = coursedata.split(",");
