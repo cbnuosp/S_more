@@ -15,7 +15,7 @@ public class Frag2_Schedule {
     private String friday[] = new String[10];
 
     public Frag2_Schedule(){
-        for(int i=0;i<10;i++){
+        for(int i=1;i<10;i++){
             monday[i]="";
             tuesday[i]="";
             wednesday[i]="";
@@ -121,7 +121,7 @@ public class Frag2_Schedule {
             professor="";
         }
         else{
-            professor="("+courseProfessor+")";
+            professor=" ("+courseProfessor+")";
         }
         int temp;
         String tempstr=scheduleText;
@@ -329,7 +329,7 @@ public class Frag2_Schedule {
 
         int maxLength=0;
         String maxString="";
-        for(int i=0;i<10;i++){
+        for(int i=1;i<10;i++){
             if(this.monday[i].length()>maxLength) {
                 maxLength=this.monday[i].length();
                 maxString=this.monday[i];
@@ -361,24 +361,26 @@ public class Frag2_Schedule {
                 colortext=this.monday[i].substring(index+1);
                 monday[i].setText(coursetext);
 
-                if(colortext.equals("LightBlue"))
-                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightBlue));
-                if(colortext.equals("LightCoral"))
-                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCoral));
-                if(colortext.equals("LightCyan"))
-                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCyan));
-                if(colortext.equals("LightGray"))
-                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGray));
-                if(colortext.equals("LightGreen"))
-                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGreen));
+                if(colortext.equals("Red"))
+                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.Red));
+                if(colortext.equals("Orange"))
+                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.Orange));
+                if(colortext.equals("Yellow"))
+                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.Yellow));
+                if(colortext.equals("Green"))
+                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.Green));
+                if(colortext.equals("SkyBlue"))
+                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.SkyBlue));
+                if(colortext.equals("Indigo"))
+                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.Indigo));
+                if(colortext.equals("Purple"))
+                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.Purple));
+                if(colortext.equals("LightPurple"))
+                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPurple));
                 if(colortext.equals("LightPink"))
                     monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPink));
-                if(colortext.equals("LightSlateGray"))
-                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSlateGray));
-                if(colortext.equals("LightYellow"))
-                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightYellow));
-                if(colortext.equals("LightSteelBlue"))
-                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
+                if(colortext.equals("Gray"))
+                    monday[i].setBackgroundColor(context.getResources().getColor(R.color.Gray));
 
             }
             else{
@@ -391,24 +393,26 @@ public class Frag2_Schedule {
                 colortext=this.tuesday[i].substring(index+1);
                 tuesday[i].setText(coursetext);
 
-                if(colortext.equals("LightBlue"))
-                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightBlue));
-                if(colortext.equals("LightCoral"))
-                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCoral));
-                if(colortext.equals("LightCyan"))
-                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCyan));
-                if(colortext.equals("LightGray"))
-                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGray));
-                if(colortext.equals("LightGreen"))
-                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGreen));
+                if(colortext.equals("Red"))
+                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.Red));
+                if(colortext.equals("Orange"))
+                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.Orange));
+                if(colortext.equals("Yellow"))
+                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.Yellow));
+                if(colortext.equals("Green"))
+                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.Green));
+                if(colortext.equals("SkyBlue"))
+                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.SkyBlue));
+                if(colortext.equals("Indigo"))
+                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.Indigo));
+                if(colortext.equals("Purple"))
+                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.Purple));
+                if(colortext.equals("LightPurple"))
+                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPurple));
                 if(colortext.equals("LightPink"))
                     tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPink));
-                if(colortext.equals("LightSlateGray"))
-                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSlateGray));
-                if(colortext.equals("LightYellow"))
-                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightYellow));
-                if(colortext.equals("LightSteelBlue"))
-                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
+                if(colortext.equals("Gray"))
+                    tuesday[i].setBackgroundColor(context.getResources().getColor(R.color.Gray));
             }
             else{
                 tuesday[i].setText(maxString);
@@ -420,24 +424,26 @@ public class Frag2_Schedule {
                 colortext=this.wednesday[i].substring(index+1);
                 wednesday[i].setText(coursetext);
 
-                if(colortext.equals("LightBlue"))
-                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightBlue));
-                if(colortext.equals("LightCoral"))
-                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCoral));
-                if(colortext.equals("LightCyan"))
-                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCyan));
-                if(colortext.equals("LightGray"))
-                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGray));
-                if(colortext.equals("LightGreen"))
-                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGreen));
+                if(colortext.equals("Red"))
+                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.Red));
+                if(colortext.equals("Orange"))
+                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.Orange));
+                if(colortext.equals("Yellow"))
+                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.Yellow));
+                if(colortext.equals("Green"))
+                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.Green));
+                if(colortext.equals("SkyBlue"))
+                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.SkyBlue));
+                if(colortext.equals("Indigo"))
+                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.Indigo));
+                if(colortext.equals("Purple"))
+                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.Purple));
+                if(colortext.equals("LightPurple"))
+                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPurple));
                 if(colortext.equals("LightPink"))
                     wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPink));
-                if(colortext.equals("LightSlateGray"))
-                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSlateGray));
-                if(colortext.equals("LightYellow"))
-                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightYellow));
-                if(colortext.equals("LightSteelBlue"))
-                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
+                if(colortext.equals("Gray"))
+                    wednesday[i].setBackgroundColor(context.getResources().getColor(R.color.Gray));
             }
             else{
                 wednesday[i].setText(maxString);
@@ -450,24 +456,26 @@ public class Frag2_Schedule {
                 colortext=this.thursday[i].substring(index+1);
                 thursday[i].setText(coursetext);
 
-                if(colortext.equals("LightBlue"))
-                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightBlue));
-                if(colortext.equals("LightCoral"))
-                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCoral));
-                if(colortext.equals("LightCyan"))
-                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCyan));
-                if(colortext.equals("LightGray"))
-                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGray));
-                if(colortext.equals("LightGreen"))
-                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGreen));
+                if(colortext.equals("Red"))
+                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.Red));
+                if(colortext.equals("Orange"))
+                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.Orange));
+                if(colortext.equals("Yellow"))
+                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.Yellow));
+                if(colortext.equals("Green"))
+                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.Green));
+                if(colortext.equals("SkyBlue"))
+                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.SkyBlue));
+                if(colortext.equals("Indigo"))
+                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.Indigo));
+                if(colortext.equals("Purple"))
+                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.Purple));
+                if(colortext.equals("LightPurple"))
+                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPurple));
                 if(colortext.equals("LightPink"))
                     thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPink));
-                if(colortext.equals("LightSlateGray"))
-                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSlateGray));
-                if(colortext.equals("LightYellow"))
-                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightYellow));
-                if(colortext.equals("LightSteelBlue"))
-                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
+                if(colortext.equals("Gray"))
+                    thursday[i].setBackgroundColor(context.getResources().getColor(R.color.Gray));
             }
             else{
                 thursday[i].setText(maxString);
@@ -479,24 +487,26 @@ public class Frag2_Schedule {
                 colortext = this.friday[i].substring(index + 1);
                 friday[i].setText(coursetext);
 
-                if (colortext.equals("LightBlue"))
-                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightBlue));
-                if (colortext.equals("LightCoral"))
-                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCoral));
-                if (colortext.equals("LightCyan"))
-                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightCyan));
-                if (colortext.equals("LightGray"))
-                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGray));
-                if (colortext.equals("LightGreen"))
-                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightGreen));
-                if (colortext.equals("LightPink"))
+                if(colortext.equals("Red"))
+                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.Red));
+                if(colortext.equals("Orange"))
+                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.Orange));
+                if(colortext.equals("Yellow"))
+                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.Yellow));
+                if(colortext.equals("Green"))
+                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.Green));
+                if(colortext.equals("SkyBlue"))
+                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.SkyBlue));
+                if(colortext.equals("Indigo"))
+                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.Indigo));
+                if(colortext.equals("Purple"))
+                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.Purple));
+                if(colortext.equals("LightPurple"))
+                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPurple));
+                if(colortext.equals("LightPink"))
                     friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightPink));
-                if (colortext.equals("LightSlateGray"))
-                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSlateGray));
-                if (colortext.equals("LightYellow"))
-                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightYellow));
-                if (colortext.equals("LightSteelBlue"))
-                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.LightSteelBlue));
+                if(colortext.equals("Gray"))
+                    friday[i].setBackgroundColor(context.getResources().getColor(R.color.Gray));
             }
             else{
                 friday[i].setText(maxString);

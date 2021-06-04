@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -164,6 +165,8 @@ public class Frag2 extends Fragment {
                                                 }
                                             }
                                         });
+                                Toast.makeText(getActivity(), "시간표가 삭제 되었습니다.", Toast.LENGTH_SHORT).show();
+
                             }
                         });
                 /*builder.setPositiveButton("취소",
