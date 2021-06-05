@@ -25,16 +25,16 @@
     <color name="colorfrag2_list">#F7F7F7</color>
     <color name="colorfrag2_list_dark">#E8E8E8</color>
 
-    <color name="LightBlue">#FFADC8E6</color>
-    <color name="LightCoral">#FFF08080</color>
-    <color name="LightCyan">#FFE0FFFF</color>
-    <color name="LightGray">#FFD3D3D3</color>
-    <color name="LightGreen">#FF90EE90</color>
-    <color name="LightPink">#FFFFB8C1</color>
-    <color name="LightSlateGray">#FF778899</color>
-    <color name="LightSteelBlue">#FFB0C4DE</color>
-    <color name="LightSalmon">#FFFFA07A</color>
-    <color name="LightYellow">#FFFFFFE0</color>
+    <color name="Red">#EA706B</color>
+    <color name="Orange">#FBA08E</color>
+    <color name="Yellow">#f9d56e</color>
+    <color name="Green">#BBE093</color>
+    <color name="SkyBlue">#a8d8ea</color>
+    <color name="Indigo">#27496d</color>
+    <color name="Purple">#7a08fa</color>
+    <color name="LightPurple">#a6b1e1</color>
+    <color name="LightPink">#fcbad3</color>
+    <color name="Gray">#3c4245</color>
 
     //Todo사용
     <color name="colorPrimary">#3F51B5</color>

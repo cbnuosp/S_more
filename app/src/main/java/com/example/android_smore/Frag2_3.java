@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -200,6 +201,8 @@ public class Frag2_3 extends Fragment {
                                                 }
                                             }
                                         });
+
+                                Toast.makeText(getActivity(), "시간표가 추가되었습니다.", Toast.LENGTH_SHORT).show();
 
                             }
                         });

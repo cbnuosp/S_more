@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -119,12 +120,12 @@ public class Frag2_2 extends Fragment {
             @Override
             public void onClick(View view){
                 // 입력값이 하나라도 없으면 오류 메시지 출력, return
-                if((coursenametxt.getText().toString().length()==0)||(professornametxt.getText().toString().length()==0)
-                        ||(spinnerstart.getSelectedItemPosition()==0)||(spinnerend.getSelectedItemPosition()==0)
-                        ||(spinnercolor.getSelectedItemPosition()==0)||(spinnerday.getSelectedItemPosition()==0)
-                        ||(starttime>endtime)){
+                if((coursenametxt.getText().toString().length()==0) ||(spinnerstart.getSelectedItemPosition()==0)
+                        ||(spinnerend.getSelectedItemPosition()==0) ||(spinnercolor.getSelectedItemPosition()==0)
+                        ||(spinnerday.getSelectedItemPosition()==0) ||(starttime>endtime)){
                     Log.v("추가하기 버튼","입력 실패");
                     // Toast message 구현 예정
+                    Toast.makeText(getActivity(), "강좌 데이터 추가에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                 }
                 // 모두 입력되었을 때
                 else{
@@ -171,12 +172,13 @@ public class Frag2_2 extends Fragment {
                                         }
                                     }
                                 });
+
+                        Toast.makeText(getActivity(), "강좌 데이터가 추가되었습니다.", Toast.LENGTH_SHORT).show();
                     }
                     else{
                         Log.v("시간표 추가","실패, 이미 저장되어 있음");
                         return;
                     }
-
                 }
             }
         });
@@ -247,43 +249,43 @@ public class Frag2_2 extends Fragment {
                     case 0:
                         break;
                     case 1:
-                        previewimg.setImageResource(R.color.LightBlue);
+                        previewimg.setImageResource(R.color.Red);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                     case 2:
-                        previewimg.setImageResource(R.color.LightCoral);
+                        previewimg.setImageResource(R.color.Orange);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                     case 3:
-                        previewimg.setImageResource(R.color.LightCyan);
+                        previewimg.setImageResource(R.color.Yellow);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                     case 4:
-                        previewimg.setImageResource(R.color.LightGray);
+                        previewimg.setImageResource(R.color.Green);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                     case 5:
-                        previewimg.setImageResource(R.color.LightGreen);
+                        previewimg.setImageResource(R.color.SkyBlue);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                     case 6:
-                        previewimg.setImageResource(R.color.LightPink);
+                        previewimg.setImageResource(R.color.Indigo);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                     case 7:
-                        previewimg.setImageResource(R.color.LightSlateGray);
+                        previewimg.setImageResource(R.color.Purple);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                     case 8:
-                        previewimg.setImageResource(R.color.LightSalmon);
+                        previewimg.setImageResource(R.color.LightPurple);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                     case 9:
-                        previewimg.setImageResource(R.color.LightYellow);
+                        previewimg.setImageResource(R.color.LightPink);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                     case 10:
-                        previewimg.setImageResource(R.color.LightSteelBlue);
+                        previewimg.setImageResource(R.color.Gray);
                         Log.v("색 : ",spinnercolor.getSelectedItem().toString()+"_"+spinnercolor.getSelectedItemPosition());
                         break;
                 }

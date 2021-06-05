@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="5dp">
+        android:layout_margin="10dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -39,13 +39,14 @@
             android:background="#EF9D9D">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:layout_width="24dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text=""
                 android:background="@color/yellow"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -53,9 +54,12 @@
                 android:text="월"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:background="@color/yellow"/>
+                android:background="@color/yellow"
+                android:textSize="17dp"
+                android:textAlignment="center"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -63,9 +67,12 @@
                 android:text="화"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:background="@color/yellow" />
+                android:background="@color/yellow"
+                android:textSize="17dp"
+                android:textAlignment="center" />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -73,9 +80,12 @@
                 android:text="수"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:background="@color/yellow" />
+                android:background="@color/yellow"
+                android:textSize="17dp"
+                android:textAlignment="center" />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -83,9 +93,12 @@
                 android:text="목"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:background="@color/yellow"/>
+                android:background="@color/yellow"
+                android:textSize="17dp"
+                android:textAlignment="center"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -93,7 +106,9 @@
                 android:text="금"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:background="@color/yellow" />
+                android:background="@color/yellow"
+                android:textSize="17dp"
+                android:textAlignment="center" />
 
         </TableRow>
 
@@ -105,17 +120,18 @@
             android:background="#EF9D9D">
 
             <TextView
-                android:text="9"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/yellow"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
                 android:gravity="right"
-                />
+                android:paddingRight="1dp"
+                android:text="09"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="월"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -124,9 +140,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/monday1"/>
+                android:id="@+id/monday1"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="화"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -135,9 +153,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday1"/>
+                android:id="@+id/tuesday1"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="수"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -146,9 +166,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday1"/>
+                android:id="@+id/wednesday1"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="목"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -157,9 +179,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/thursday1"/>
+                android:id="@+id/thursday1"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="금"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -168,7 +192,8 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/friday1"/>
+                android:id="@+id/friday1"
+                android:padding="2dp"/>
 
         </TableRow>
 
@@ -180,17 +205,18 @@
             android:background="@color/yellow">
 
             <TextView
-                android:text="10"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/yellow"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
                 android:gravity="right"
-                />
+                android:paddingRight="1dp"
+                android:text="10"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="월"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -199,9 +225,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/monday2"/>
+                android:id="@+id/monday2"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="화"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -210,9 +238,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday2"/>
+                android:id="@+id/tuesday2"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="수"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -221,9 +251,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday2"/>
+                android:id="@+id/wednesday2"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="목"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -232,9 +264,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/thursday2"/>
+                android:id="@+id/thursday2"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="금"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -243,7 +277,8 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/friday2"/>
+                android:id="@+id/friday2"
+                android:padding="2dp"/>
 
         </TableRow>
 
@@ -256,16 +291,18 @@
 
             <TextView
                 android:text="11"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
+                android:textSize="15dp"
+                android:paddingRight="1dp"
                 />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="월"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -274,9 +311,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/monday3"/>
+                android:id="@+id/monday3"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="화"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -285,9 +324,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday3"/>
+                android:id="@+id/tuesday3"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="수"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -296,9 +337,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday3"/>
+                android:id="@+id/wednesday3"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="목"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -307,9 +350,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/thursday3"/>
+                android:id="@+id/thursday3"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="금"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -318,7 +363,8 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/friday3"/>
+                android:id="@+id/friday3"
+                android:padding="2dp"/>
 
         </TableRow>
 
@@ -331,16 +377,18 @@
 
             <TextView
                 android:text="12"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
+                android:textSize="15dp"
+                android:paddingRight="1dp"
                 />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="월"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -349,9 +397,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/monday4"/>
+                android:id="@+id/monday4"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="화"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -360,9 +410,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday4"/>
+                android:id="@+id/tuesday4"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="수"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -371,9 +423,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday4"/>
+                android:id="@+id/wednesday4"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="목"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -382,9 +436,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/thursday4"/>
+                android:id="@+id/thursday4"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="금"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -393,7 +449,8 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/friday4"/>
+                android:id="@+id/friday4"
+                android:padding="2dp"/>
 
         </TableRow>
 
@@ -406,16 +463,18 @@
 
             <TextView
                 android:text="13"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
+                android:textSize="15dp"
+                android:paddingRight="1dp"
                 />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="월"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -424,9 +483,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/monday5"/>
+                android:id="@+id/monday5"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="화"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -435,9 +496,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday5"/>
+                android:id="@+id/tuesday5"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="수"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -446,9 +509,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday5"/>
+                android:id="@+id/wednesday5"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="목"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -457,9 +522,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/thursday5"/>
+                android:id="@+id/thursday5"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="금"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -468,7 +535,8 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/friday5"/>
+                android:id="@+id/friday5"
+                android:padding="2dp"/>
 
         </TableRow>
 
@@ -480,17 +548,19 @@
             android:background="@color/yellow">
 
             <TextView
-                android:text="14"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/yellow"
+                android:gravity="right"
+                android:text="14"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                android:gravity="right"
+                android:textSize="15dp"
+                android:paddingRight="1dp"
                 />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="월"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -499,9 +569,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/monday6"/>
+                android:id="@+id/monday6"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="화"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -510,9 +582,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday6"/>
+                android:id="@+id/tuesday6"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="수"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -521,9 +595,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday6"/>
+                android:id="@+id/wednesday6"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="목"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -532,9 +608,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/thursday6"/>
+                android:id="@+id/thursday6"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="금"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -543,7 +621,8 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/friday6"/>
+                android:id="@+id/friday6"
+                android:padding="2dp"/>
 
         </TableRow>
 
@@ -556,16 +635,18 @@
 
             <TextView
                 android:text="15"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
+                android:textSize="15dp"
+                android:paddingRight="1dp"
                 />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="월"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -574,9 +655,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/monday7"/>
+                android:id="@+id/monday7"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="화"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -585,9 +668,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday7"/>
+                android:id="@+id/tuesday7"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="수"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -596,9 +681,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday7"/>
+                android:id="@+id/wednesday7"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="목"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -607,9 +694,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/thursday7"/>
+                android:id="@+id/thursday7"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="금"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -618,7 +707,8 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/friday7"/>
+                android:id="@+id/friday7"
+                android:padding="2dp"/>
 
         </TableRow>
 
@@ -631,16 +721,18 @@
 
             <TextView
                 android:text="16"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
+                android:textSize="15dp"
+                android:paddingRight="1dp"
                 />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="월"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -649,9 +741,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/monday8"/>
+                android:id="@+id/monday8"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="화"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -660,9 +754,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday8"/>
+                android:id="@+id/tuesday8"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="수"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -671,9 +767,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday8"/>
+                android:id="@+id/wednesday8"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="목"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -682,9 +780,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/thursday8"/>
+                android:id="@+id/thursday8"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="금"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -693,7 +793,8 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/friday8"/>
+                android:id="@+id/friday8"
+                android:padding="2dp"/>
 
         </TableRow>
 
@@ -706,16 +807,18 @@
 
             <TextView
                 android:text="17"
-                android:layout_width="wrap_content"
+                android:layout_width="24dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/yellow"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:gravity="right"
+                android:textSize="15dp"
+                android:paddingRight="1dp"
                 />
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="월"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -724,9 +827,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/monday9"/>
+                android:id="@+id/monday9"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="화"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -735,9 +840,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/tuesday9"/>
+                android:id="@+id/tuesday9"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="수"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -746,9 +853,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/wednesday9"/>
+                android:id="@+id/wednesday9"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="목"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -757,9 +866,11 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/thursday9"/>
+                android:id="@+id/thursday9"
+                android:padding="2dp"/>
 
-            <TextView
+            <com.example.android_smore.Frag2_1_AutoResizeTextView
+                android:autoSizeTextType="uniform"
                 android:text="금"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -768,7 +879,8 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:background="@drawable/cell_shape"
-                android:id="@+id/friday9"/>
+                android:id="@+id/friday9"
+                android:padding="2dp"/>
 
         </TableRow>
     </TableLayout>

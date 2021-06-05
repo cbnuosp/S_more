@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -109,9 +110,9 @@ public class Frag2 extends Fragment {
                                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                                                 if (task.isSuccessful()){
                                                     for(QueryDocumentSnapshot document : task.getResult()) {
-                                                        Log.d(TAG, "선택된 문서 : "+document.getId() + "=>" + document.getData());
+                                                        Log.v("선택된 문서",document.getId() + "=>" + document.getData());
                                                         if (document.get("id").toString().equals(uid)) {
-                                                            Log.d(TAG, "삭제될 문서 : "+document.getId() + "=>" + document.getData());
+                                                            Log.v("삭제될 문서",document.getId() + "=>" + document.getData());
                                                             db.collection("Timetable").document(document.getId())
                                                                     .delete()
                                                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -156,6 +157,7 @@ public class Frag2 extends Fragment {
                                                                         Log.v("다음시간표 선택실패","fail");
                                                                     }
                                                                 });
+                                                        break;
                                                     }
                                                 }
                                                 else{
@@ -163,6 +165,8 @@ public class Frag2 extends Fragment {
                                                 }
                                             }
                                         });
+                                Toast.makeText(getActivity(), "시간표가 삭제 되었습니다.", Toast.LENGTH_SHORT).show();
+
                             }
                         });
                 /*builder.setPositiveButton("취소",

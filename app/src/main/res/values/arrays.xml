@@ -45,16 +45,16 @@
 
     <string-array name="색">
         <item>Chosse Color</item>
-        <item>LightBlue</item>
-        <item>LightCoral</item>
-        <item>LightCyan</item>
-        <item>LightGray</item>
-        <item>LightGreen</item>
-        <item>LightPink</item>
-        <item>LightSlateGray</item>
-        <item>LightSalmon</item>
-        <item>LightYellow</item>
-        <item>LightSteelBlue</item>
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>SkyBlue</item>
+        <item>Indigo</item>
+        <item>Purple</item>
+        <item>LightPurple</item>
+        <item>LigLightPink</item>
+        <item>Gray</item>
     </string-array>
 
 </resources>
