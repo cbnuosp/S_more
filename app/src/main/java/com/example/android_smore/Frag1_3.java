@@ -1,19 +1,25 @@
 package com.example.android_smore;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Frag1_3#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
 public class Frag1_3 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -24,68 +30,20 @@ public class Frag1_3 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    //여기부터붙여넣음
-    String titledoes;
-    String datedoes;
-    String descdoes;
-    String keydoes;
-
-    public Frag1_3( String titledoes, String datedoes, String descdoes, String keydoes ) {
-        this.titledoes = titledoes;
-        this.datedoes = datedoes;
-        this.descdoes = descdoes;
-        this.keydoes = keydoes;
-    }
-
-    public String getKeydoes() {
-        return keydoes;
-    }
-
-    public String getTitledoes() {
-
-        return titledoes;
-    }
-
-    public void setTitledoes( String titledoes ) {
-
-        this.titledoes = titledoes;
-    }
-
-    public String getDatedoes() {
-
-        return datedoes;
-    }
-
-    public void setDatedoes( String datedoes ) {
-
-        this.datedoes = datedoes;
-    }
-
-    public String getDescdoes() {
-
-        return descdoes;
-    }
-
-    public void setDescdoes( String descdoes ) {
-
-        this.descdoes = descdoes;
-    }
-
+    private View view;
+    public String idUpdate = ""; //업데이트 해야하는 item의 id
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    public String keydoes=""; //업데이트 해야하는 item의 keydoes
+    final  String keykeydoes =getArguments().getString("keydoes");
+    DocumentReference req;
+    EditText titledoes, descdoes, datedoes;
+    Button btnSaveUpdate, btnDelete;
+    //DatabaseReference reference;
 
     public Frag1_3() {
-        // Required empty public constructor
 
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Frag1_3.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Frag1_3 newInstance( String param1, String param2 ) {
         Frag1_3 fragment = new Frag1_3();
         Bundle args = new Bundle();
@@ -107,9 +65,70 @@ public class Frag1_3 extends Fragment {
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState ) {
+        view=inflater.inflate(R.layout.frag1_3,container,false);
+        req = db.collection("ToDoList").document(mParam1);
+
+        titledoes = view.findViewById(R.id.titledoes);
+        descdoes = view.findViewById(R.id.descdoes);
+        datedoes = view.findViewById(R.id.datedoes);
+
+        btnSaveUpdate = view.findViewById(R.id.btnSaveTask);
+        btnDelete = view.findViewById(R.id.btnCancel);
+        ImageButton closeButton;
+        closeButton=(ImageButton) view.findViewById(R.id.closeButton);
+
+        titledoes.setText(getArguments().getString("titledoes"));
+        descdoes.setText(getArguments().getString("descdoes"));
+        datedoes.setText(getArguments().getString("datedoes"));
+
+        btnSaveUpdate.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick( View view ) {
+                updateData(titledoes.getText().toString(),descdoes.getText().toString(),datedoes.getText().toString());
+            }
+        });
 
 
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag1_3, container, false);
+        btnDelete.setOnClickListener(view -> req.delete().addOnSuccessListener(aVoid -> {
+            onFinish();
+            Toast.makeText(getActivity(), "삭제되었습니다", Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(e -> Toast.makeText(getActivity(), "삭제에 실패하였습니다.", Toast.LENGTH_SHORT).show()));
+
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick( View view ) {
+                getFragmentManager().beginTransaction().replace(R.id.main_frame,new Frag1_1()).commit();
+
+            }
+        });
+
+        return view;
+    }
+
+    private void onFinish() {
+        getFragmentManager().beginTransaction().replace(R.id.main_frame, new Frag1_1()).commit();
+    }
+
+    private void updateData( String titledoes, String descdoes, String datedoes ) {
+        db.collection("ToDoList").document(idUpdate)
+                .update("titledoes",titledoes,"descdoes",descdoes,"datedoes",datedoes)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess( Void aVoid ) {
+                        Toast.makeText(getActivity(),"수정이 완료되었습니다",Toast.LENGTH_SHORT).show();
+                    }
+                });
+        //실시간 데이터 refresh
+        db.collection("ToDoList").document(idUpdate)
+                .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                    @Override
+                    public void onEvent( @Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error ) {
+                        FragmentActivity activitiy = null;
+                        Frag1_1 fragment = (Frag1_1) activitiy.getSupportFragmentManager().findFragmentById(R.id.fragment);
+                        fragment.loadData();
+                    }
+                });
     }
 }
