@@ -63,9 +63,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
 
         android:orientation="vertical"
         android:paddingTop="22dp"
@@ -89,7 +89,7 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@color/red"/>
+                    android:background="@color/red" />
 
                 <TextView
                     android:id="@+id/addtitle"
@@ -109,12 +109,12 @@
             <EditText
                 android:id="@+id/titledoes"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="52dp"
                 android:background="@drawable/redbtn"
                 android:hint="제목을 입력하세요"
                 android:inputType="text"
-                android:privateImeOptions="defaultInputmode=korean"
                 android:paddingLeft="12dp"
+                android:privateImeOptions="defaultInputmode=korean"
                 android:textColor="#292828"
                 android:textColorHint="#B5B5B5" />
 
@@ -138,13 +138,14 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@color/orange"/>
+                    android:background="@color/orange" />
+
                 <TextView
                     android:id="@+id/adddesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Description"
                     android:textColor="#373636"
                     android:textSize="20sp"
@@ -155,7 +156,7 @@
             <EditText
                 android:id="@+id/descdoes"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="52dp"
                 android:background="@drawable/orangebtn"
                 android:hint="내용을 입력하세요"
                 android:inputType="text"
@@ -183,7 +184,8 @@
                     android:layout_height="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:background="@color/orange"/>
+                    android:background="@color/orange" />
+
                 <TextView
                     android:id="@+id/adddate"
                     android:layout_width="match_parent"
@@ -199,11 +201,10 @@
             </LinearLayout>
 
 
-
             <EditText
                 android:id="@+id/datedoes"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="52dp"
                 android:background="@drawable/yellowbtn"
                 android:hint="기한을 입력하세요"
                 android:inputType="text"
@@ -214,12 +215,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
                 android:layout_marginTop="30dp"
-                >
+                android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/btnSaveUpdate"
-                    android:layout_width="160dp"
+                    android:layout_width="156dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="10dp"
@@ -232,7 +233,7 @@
 
                 <Button
                     android:id="@+id/btnDelete"
-                    android:layout_width="160dp"
+                    android:layout_width="156dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="20dp"

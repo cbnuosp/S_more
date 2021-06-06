@@ -63,9 +63,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
         android:orientation="vertical"
         android:paddingTop="22dp"
         android:paddingBottom="22dp">
@@ -109,7 +109,7 @@
             <EditText
                 android:id="@+id/titledoes"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="52dp"
                 android:background="@drawable/redbtn"
                 android:hint="제목을 입력하세요"
                 android:inputType="text"
@@ -157,7 +157,7 @@
             <EditText
                 android:id="@+id/descdoes"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="52dp"
                 android:background="@drawable/orangebtn"
                 android:hint="내용을 입력하세요"
                 android:inputType="text"
@@ -204,7 +204,7 @@
             <EditText
                 android:id="@+id/datedoes"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="52dp"
                 android:background="@drawable/yellowbtn"
                 android:hint="기한을 입력하세요"
                 android:inputType="text"
@@ -220,7 +220,7 @@
 
                 <Button
                     android:id="@+id/btnSaveTask"
-                    android:layout_width="160dp"
+                    android:layout_width="156dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="16dp"
@@ -233,7 +233,7 @@
 
                 <Button
                     android:id="@+id/btnCancel"
-                    android:layout_width="160dp"
+                    android:layout_width="156dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
