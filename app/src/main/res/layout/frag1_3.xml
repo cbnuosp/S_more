@@ -1,56 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bgitemdoes"
-    android:orientation="horizontal"
-    android:layout_marginBottom="20dp"
-    android:layout_height="100dp">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background2"
+    tools:context=".Frag1_3">
 
+    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:orientation="vertical">
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <TextView
-            android:id="@+id/titledoes"
+            android:id="@+id/titlepage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
-            android:text="팀 회의"
-            android:textColor="#000C5D"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Edit To-Do"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/descdoes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="오픈소스 팀 회의(프로젝트 개발)"
-            android:textColor="#ADADAD"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
+        <ImageButton
+            android:id="@+id/closeButton"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="18dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="ToDoClose"
+            android:scaleType="fitCenter"
+            android:src="@drawable/close"
+            android:stateListAnimator="@null"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
+    <!-- 수평선 -->
     <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="2dp"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background2" >
 
-        <TextView
-            android:id="@+id/datedoes"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/orange"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <!-- 입력상자 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+
+        android:orientation="vertical"
+        android:paddingTop="22dp"
+        android:paddingBottom="22dp">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="right"
-            android:text="Tomorrow"
-            android:textColor="#F63EA5"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/red"/>
+
+                <TextView
+                    android:id="@+id/addtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Add Title"
+                    android:textColor="#373636"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/titledoes"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/redbtn"
+                android:hint="제목을 입력하세요"
+                android:inputType="text"
+                android:privateImeOptions="defaultInputmode=korean"
+                android:paddingLeft="12dp"
+                android:textColor="#292828"
+                android:textColorHint="#B5B5B5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/orange"/>
+                <TextView
+                    android:id="@+id/adddesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Description"
+                    android:textColor="#373636"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/descdoes"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/orangebtn"
+                android:hint="내용을 입력하세요"
+                android:inputType="text"
+                android:maxLength="40"
+                android:paddingLeft="12dp"
+                android:textColor="#292828"
+                android:textColorHint="#B5B5B5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/orange"/>
+                <TextView
+                    android:id="@+id/adddate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Timeline"
+                    android:textColor="#373636"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+
+
+            <EditText
+                android:id="@+id/datedoes"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/yellowbtn"
+                android:hint="기한을 입력하세요"
+                android:inputType="text"
+                android:paddingLeft="12dp"
+                android:textColor="#292828"
+                android:textColorHint="#B5B5B5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp"
+                >
+                <Button
+                    android:id="@+id/btnSaveUpdate"
+                    android:layout_width="160dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bgbtncreate"
+                    android:text="SAVE"
+                    android:textAllCaps="false"
+                    android:textColor="#FFF"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="160dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bgbtncancel"
+                    android:text="DELETE"
+                    android:textAllCaps="false"
+                    android:textColor="#AFAFAF"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

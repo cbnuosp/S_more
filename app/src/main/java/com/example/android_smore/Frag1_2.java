@@ -1,11 +1,8 @@
 package com.example.android_smore;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,20 +12,27 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.net.ConnectException;
-import java.util.Random;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Frag1_2#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+import java.util.UUID;
+
 public class Frag1_2 extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String TAG = "Frag1_2";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -36,9 +40,9 @@ public class Frag1_2 extends Fragment {
     private View view;
     private Context context;
     TextView titlepage, addtitle, adddesc, adddate;
-    EditText titledoes, descdoes, datedoes;
+    EditText titledoes, datedoes, descdoes;
     Button btnSaveTask, btnCancel;
-    //DatabaseReference reference;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     Integer doesNum = new Random().nextInt();
     String keydoes = Integer.toString(doesNum);
 
@@ -46,14 +50,6 @@ public class Frag1_2 extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Frag1_2.
-     */
     // TODO: Rename and change types and number of parameters
     public static Frag1_2 newInstance( String param1, String param2 ) {
         Frag1_2 fragment = new Frag1_2();
@@ -76,16 +72,19 @@ public class Frag1_2 extends Fragment {
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
         view=inflater.inflate(R.layout.frag1_2,container,false);
-        context=container.getContext(); //DB 전 확인용
+        //context=container.getContext(); //DB 전 확인용
+
         titlepage=view.findViewById(R.id.titlepage);
 
         addtitle=view.findViewById(R.id.titlepage);
-        adddesc = view.findViewById(R.id.adddesc);
         adddate = view.findViewById(R.id.adddate);
+        adddesc = view.findViewById(R.id.adddesc);
+
 
         titledoes = view.findViewById(R.id.titledoes);
-        descdoes = view.findViewById(R.id.descdoes);
         datedoes = view.findViewById(R.id.datedoes);
+        descdoes = view.findViewById(R.id.descdoes);
+
 
         btnSaveTask = view.findViewById(R.id.btnSaveTask);
         btnCancel = view.findViewById(R.id.btnCancel);
@@ -93,9 +92,33 @@ public class Frag1_2 extends Fragment {
         btnSaveTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
-                //();
+                //insert data to database
+                String keydoes = UUID.randomUUID().toString(); //random id
+                Map<String, Object> todo = new HashMap<>();
+                todo.put("titledoes", titledoes);
+                todo.put("datedoes", datedoes);
+                todo.put("descdoes", descdoes);
+                todo.put("keydoes", keydoes);
 
-                Toast.makeText(context,"추가되었습니다.",Toast.LENGTH_SHORT).show();
+                db.collection("ToDoList").document(keydoes)
+                        .set(todo)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess( Void aVoid ) {
+                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                fragmentTransaction.replace(R.id.main_frame, new Frag1_1());
+                                fragmentTransaction.commit();
+                                Toast.makeText(getActivity(),"새로운 ToDo가 추가되었습니다.",Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure( @NonNull Exception e ) {
+                                Log.w(TAG, "Error writing document", e);
+                            }
+                        });
             }
         });
 
@@ -112,32 +135,38 @@ public class Frag1_2 extends Fragment {
             @Override
             public void onClick( View view ) {
                 getFragmentManager().beginTransaction().replace(R.id.main_frame,new Frag1_1()).commit();
-
-                // insert data to database
-//                reference = FirebaseDatabase.getInstance().getReference().child("DoesApp").
-//                        child("Does" + doesNum);
-//                reference.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(DataSnapshot dataSnapshot) {
-//
-//                        dataSnapshot.getRef().child("titledoes").setValue(titledoes.getText().toString());
-//                        dataSnapshot.getRef().child("descdoes").setValue(descdoes.getText().toString());
-//                        dataSnapshot.getRef().child("datedoes").setValue(datedoes.getText().toString());
-//                        dataSnapshot.getRef().child("keydoes").setValue(keydoes);
-//
-//                        Intent a = new Intent(NewTaskAct.this,MainActivity.class);
-//                        startActivity(a);
-//
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(DatabaseError databaseError) {
-//
-//                    }
-//                });
             }
         });
 
         return view;
-    }
+}
+//    private void setData( String titledoes, String datedoes , String descdoes ) {
+//        //insert data to database
+//        String keydoes = UUID.randomUUID().toString(); //random id
+//        Map<String, Object> todo = new HashMap<>();
+//        todo.put("titledoes", titledoes);
+//        todo.put("datedoes", datedoes);
+//        todo.put("descdoes", descdoes);
+//        todo.put("keydoes", keydoes);
+//
+//        db.collection("ToDoList").document(keydoes)
+//                .set(todo)
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess( Void aVoid ) {
+//                        Log.d(TAG, "DocumentSnapshot successfully written!");
+//                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                        fragmentTransaction.replace(R.id.main_frame, new Frag1_1());
+//                        fragmentTransaction.commit();
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure( @NonNull Exception e ) {
+//                        Log.w(TAG, "Error writing document", e);
+//                    }
+//                });
+//        }
+
 }

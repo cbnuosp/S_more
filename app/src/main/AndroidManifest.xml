@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.android_smore">
 
     <application
@@ -9,12 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_smore">
-        <activity android:name=".Model.Adapter1"></activity>
+
+        <activity android:name=".Model.ToDoModel"></activity>
         <activity android:name=".Model.Frag3DataModel" />
-        <activity android:name=".Frag3_1Adapter" />
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".SuccessActivity"></activity>
-        <activity android:name=".Frag4_1"></activity>
+        <activity android:name=".Frag3_1Adapter">
+        </activity>
+        <activity android:name=".Frag1_ToDoListAdapter"></activity>
+        <activity android:name=".RegisterActivity">
+        </activity>
+        <activity android:name=".SuccessActivity">
+        </activity>
+        <activity android:name=".Frag4_1">
+        </activity>
+<!--        <activity android:name=".Frag1_3"></activity>-->
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
