@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="250dp"
         android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="19dp"
         android:orientation="vertical">
 
         <TextView
@@ -19,18 +19,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="19dp"
             android:text="팀 회의"
-            android:textColor="#000C5D"
-            android:textSize="22sp"
+            android:textColor="#323C73"
+            android:textSize="23sp"
             android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/descdoes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp"
             android:text="오픈소스 팀 회의(프로젝트 개발)"
-            android:textColor="#ADADAD"
-            android:textSize="18sp"
+            android:textColor="#646464"
+            android:textSize="19sp"
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -38,20 +39,21 @@
     <LinearLayout
         android:layout_marginTop="30dp"
         android:layout_marginLeft="2dp"
-        android:layout_width="125dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/datedoes"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginRight="15dp"
             android:gravity="right"
             android:text="Tomorrow"
-            android:textColor="#F63EA5"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="#FF5050"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </LinearLayout>

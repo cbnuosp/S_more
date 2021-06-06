@@ -1,6 +1,7 @@
 package com.example.android_smore;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,7 @@ import java.util.ArrayList;
  *
  */
 
-public class Frag1_1 extends Fragment {
+public class Frag1_1 extends Fragment{
     private static final String TAG = "Frag1_1";
 
     private static final String ARG_PARAM1 = "param1";
@@ -96,6 +97,8 @@ public class Frag1_1 extends Fragment {
         titledoes= rootView.findViewById(R.id.titledoes);
         descdoes= rootView.findViewById(R.id.descdoes);
         datedoes= rootView.findViewById(R.id.datedoes);
+
+
         ImageButton plusButton;
         plusButton = (ImageButton) rootView.findViewById(R.id.plusButton);
         plusButton.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +108,7 @@ public class Frag1_1 extends Fragment {
             }
         });
         list = new ArrayList<ToDoModel>();
-        adapter1 = new Frag1_ToDoListAdapter(getActivity(), list);
+        adapter1 = new Frag1_ToDoListAdapter( getActivity(), list);
         ourdoes = (RecyclerView) rootView.findViewById(R.id.ourdoes);
         ourdoes.setHasFixedSize(true);
         ourdoes.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -113,10 +116,14 @@ public class Frag1_1 extends Fragment {
 
         loadData();
 
+
         return rootView;
     }
 
     public void loadData(){
+        final ProgressDialog loading = ProgressDialog.show(getActivity(), "Loading To-Do List", "To-Do List를 로딩중입니다");
+       // loading.setCanceledOnTouchOutside(false);
+        loading.show();
 
         if(list.size()>0)
             list.clear(); //remove old value
@@ -127,15 +134,15 @@ public class Frag1_1 extends Fragment {
                    public void onComplete( @NonNull Task<QuerySnapshot> task ) {
                        for(DocumentSnapshot doc:task.getResult()){
                            ToDoModel todo = new ToDoModel(doc.getString("titledoes"),
-                                 doc.getString("datedoes"),
-                                 doc.getString("descdoes"),
-                                 doc.getString("keydoes"));
+                                   doc.getString("descdoes"),
+                                   doc.getString("datedoes"),
+                                   doc.getString("keydoes"));
                          list.add(todo);
                        }
-                       adapter1 = new Frag1_ToDoListAdapter(getActivity(),list);
+                       //adapter1 = new Frag1_ToDoListAdapter(getActivity(),list);
                        ourdoes.setAdapter(adapter1);
                        adapter1.notifyDataSetChanged();
-
+                       loading.dismiss();
                    }
                })
                .addOnFailureListener(new OnFailureListener() {
@@ -147,4 +154,6 @@ public class Frag1_1 extends Fragment {
                });
 
     }
+
+
 }
