@@ -90,14 +90,18 @@ public class Frag1_2 extends Fragment {
         btnCancel = view.findViewById(R.id.btnCancel);
 
         btnSaveTask.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick( View view ) {
                 //insert data to database
+                final String titledata = titledoes.getText().toString();
+                final String datedata = datedoes.getText().toString();
+                final String descdata = descdoes.getText().toString();
                 String keydoes = UUID.randomUUID().toString(); //random id
                 Map<String, Object> todo = new HashMap<>();
-                todo.put("titledoes", titledoes);
-                todo.put("datedoes", datedoes);
-                todo.put("descdoes", descdoes);
+                todo.put("titledoes", titledata);
+                todo.put("datedoes", datedata);
+                todo.put("descdoes", descdata);
                 todo.put("keydoes", keydoes);
 
                 db.collection("ToDoList").document(keydoes)

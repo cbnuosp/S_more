@@ -149,6 +149,10 @@ public class Frag2 extends Fragment {
                                                                     @Override
                                                                     public void onSuccess(Void aVoid) {
                                                                         Log.v("다음시간표 선택완료",document.getId());
+                                                                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                                                                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                                                        fragmentTransaction.replace(R.id.fragment, new Frag2_1());
+                                                                        fragmentTransaction.commit();
                                                                     }
                                                                 })
                                                                 .addOnFailureListener(new OnFailureListener() {
@@ -165,11 +169,6 @@ public class Frag2 extends Fragment {
                                                 }
                                             }
                                         });
-                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                fragmentTransaction.replace(R.id.fragment, new Frag2_1());
-                                fragmentTransaction.commit();
-
                                 Toast.makeText(getActivity(), "시간표가 삭제 되었습니다.", Toast.LENGTH_SHORT).show();
 
                             }
