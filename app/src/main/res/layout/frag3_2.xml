@@ -253,6 +253,7 @@
                 >
 
                 <!--버튼 위치 및 디자인 나중에 설정-->
+
                 <Button
                     android:id="@+id/btn_save"
                     android:layout_width="150dp"
@@ -262,9 +263,9 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
+                    android:backgroundTint="@color/green"
                     android:paddingTop="20dp"
                     android:paddingBottom="20dp"
-                    android:backgroundTint="@color/green"
                     android:text="SAVE"
                     android:textColor="#ffffff"
                     android:textStyle="bold" />

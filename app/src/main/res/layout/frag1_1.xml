@@ -73,7 +73,8 @@
         android:textSize="20sp"
         android:textColor="#9A9A9A"
         android:layout_marginTop="20dp"
-        android:text="To-Do List가 존재하지 않습니다\n (우측 상단 버튼으로 추가하세요)"
+
         android:gravity="center_horizontal" />
 
+<!--    android:text="To-Do List가 존재하지 않습니다\n (우측 상단 버튼으로 추가하세요)"-->
 </LinearLayout>
