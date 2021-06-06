@@ -31,11 +31,11 @@
                 android:id="@+id/add_timetablename_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="10dp"
                 android:background="#00FFFFFF"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_outline_add_box_white_24"
+                android:src="@drawable/outline_add_box_24"
                 android:stateListAnimator="@null"
                 tools:ignore="HardcodedText" />
 
