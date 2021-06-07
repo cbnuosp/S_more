@@ -97,7 +97,7 @@
                     android:paddingBottom="20dp"
                     android:id="@+id/pageButton"
                     android:backgroundTint="@color/blue_200"
-                    android:text="Myapage"
+                    android:text="MY-PAGE"
                     android:textColor="@color/white"
                     android:textSize="20dp"
                     android:textStyle="bold"/>
