@@ -1,9 +1,12 @@
 package com.example.android_smore;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -19,6 +22,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.loader.content.CursorLoader;
 
 import com.bumptech.glide.Glide;
@@ -157,15 +162,50 @@ public class Frag4_1 extends AppCompatActivity{
         //Intent photoIntent = new Intent(Intent.ACTION_PICK);
         //photoIntent.setType(MediaStore.Images.Media.CONTENT_TYPE);
         Intent photoIntent = new Intent();
-        photoIntent.setType("image/*");
+        //기기 기본 갤러리 접근
+        photoIntent.setType(MediaStore.Images.Media.CONTENT_TYPE);
+        //구글 갤러리 접근
+        // intent.setType("image/*");
         photoIntent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(photoIntent, GALLERY_CODE);
+        startActivityForResult(photoIntent,101);
+
+        //photoIntent.setType("image/*");
+        //photoIntent.setAction(Intent.ACTION_GET_CONTENT);
+        //startActivityForResult(photoIntent, GALLERY_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 1) {
+            int length = permissions.length;
+            for (int i = 0; i < length; i++) {
+                if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                    Log.d("MainActivity", "권한 허용 : " + permissions[i]);
+                }
+            }
+        }
+    }
+    public void checkSelfPermission() {
+        String temp = ""; //파일 읽기 권한 확인
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            temp += Manifest.permission.READ_EXTERNAL_STORAGE + " "; }
+        //파일 쓰기 권한 확인
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            temp += Manifest.permission.WRITE_EXTERNAL_STORAGE + " ";
+        }
+        if (TextUtils.isEmpty(temp) == false) {
+            // 권한 요청
+            ActivityCompat.requestPermissions(this, temp.trim().split(" "),1);
+        }else {
+            // 모두 허용 상태
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, final int resultCode, final Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == GALLERY_CODE) {
+        if(requestCode == 101 && resultCode == RESULT_OK) {
             file = Uri.fromFile(new File(getPath(data.getData())));
             final FirebaseUser user = firebaseAuth.getCurrentUser();
             String email = user.getEmail();

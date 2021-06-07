@@ -220,7 +220,7 @@
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp"
                         android:backgroundTint="@color/blue_200"
-                        android:text="DELETE"
+                        android:text="CANCEL"
                         android:textColor="@color/white"
                         android:id="@+id/cancelBtn"
                         android:textStyle="bold" />
