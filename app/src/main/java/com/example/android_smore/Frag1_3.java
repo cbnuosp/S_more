@@ -33,21 +33,20 @@ public class Frag1_3 extends Fragment {
     private String mParam1;
     private String mParam2;
     private View view;
-    public String idUpdate = ""; //업데이트 해야하는 item의 id
+//    public String idUpdate = ""; //업데이트 해야하는 item의 id
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    EditText titledoes, datedoes, descdoes;
+    EditText titledoes, descdoes, datedoes;
     Button btnSaveUpdate, btnDelete;
     ImageButton closeButton;
-    //DatabaseReference reference;
 
     public Frag1_3() {
-
     }
 
-    public static Frag1_3 newInstance( String param1 ) {
+    public static Frag1_3 newInstance( String param1, String param2 ) {
         Frag1_3 fragment = new Frag1_3();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -55,25 +54,6 @@ public class Frag1_3 extends Fragment {
     protected int LayoutRes() {
         return (R.layout.frag1_3);
     }
-
-
-//
-//    public static Frag1_3 newInstance( String param1, String param2 ) {
-//        Frag1_3 fragment = new Frag1_3();
-//        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
-
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            L.i("::: ID " + mParam1);
-//        }
-//    }
 
     @Override
     public void onCreate( Bundle savedInstanceState ) {
@@ -90,9 +70,8 @@ public class Frag1_3 extends Fragment {
         view = inflater.inflate(R.layout.frag1_3, container, false);
 
         titledoes = view.findViewById(R.id.titledoes);
-        datedoes = view.findViewById(R.id.datedoes);
         descdoes = view.findViewById(R.id.descdoes);
-
+        datedoes = view.findViewById(R.id.datedoes);
 
         btnSaveUpdate = view.findViewById(R.id.btnSaveUpdate);
         btnDelete = view.findViewById(R.id.btnDelete);
@@ -101,8 +80,8 @@ public class Frag1_3 extends Fragment {
 
         //이전페이지에서 value 얻기
         titledoes.setText(getArguments().getString("titledoes"));
-        datedoes.setText(getArguments().getString("datedoes"));
         descdoes.setText(getArguments().getString("descdoes"));
+        datedoes.setText(getArguments().getString("datedoes"));
 
         //firebase
         final String keykeydoes = getArguments().getString("keydoes");
@@ -112,32 +91,37 @@ public class Frag1_3 extends Fragment {
             @Override
             public void onClick( View view ) {
                 final String titledata = titledoes.getText().toString();
-                final String datedata = datedoes.getText().toString();
                 final String descdata = descdoes.getText().toString();
+                final String datedata = datedoes.getText().toString();
+
                 db.collection("ToDoList").document(keykeydoes)
-                        .update("titledoes",titledata,"datedoes",datedata,"descdoes",descdata)
+                        .update("titledoes",titledata,"descdoes",descdata,"datedoes",datedata)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess( Void aVoid ) {
-                                Toast.makeText(getActivity(), "수정이 완료되었습니다", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure( @NonNull Exception e ) {
-                                Toast.makeText(getActivity(), "수정이 실패하였습니다", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                db.collection("ToDoList").document(keykeydoes)
-                        .addSnapshotListener(new EventListener<DocumentSnapshot>() {
-                            @Override
-                            public void onEvent( @Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error ) {
+                                Toast.makeText(getContext(), "수정이 완료되었습니다", Toast.LENGTH_SHORT).show();
                                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                                 fragmentTransaction.replace(R.id.main_frame, new Frag1_1());
                                 fragmentTransaction.commit();
                             }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure( @NonNull Exception e ) {
+                                Toast.makeText(getContext(), "수정이 실패하였습니다", Toast.LENGTH_SHORT).show();
+                            }
                         });
+//                db.collection("ToDoList").document(keykeydoes)
+//                        .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+//                            @Override
+//                            public void onEvent( @Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error ) {
+//                                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                                fragmentTransaction.replace(R.id.main_frame, new Frag1_1());
+//                                fragmentTransaction.commit();
+//                            }
+//                        });
             }
         });
 
@@ -159,7 +143,7 @@ public class Frag1_3 extends Fragment {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure( @NonNull Exception e ) {
-                                Toast.makeText(getActivity(), "삭제를 실패하였습니다", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "삭제를 실패하였습니다", Toast.LENGTH_SHORT).show();
                             }
                         });
             }

@@ -40,7 +40,7 @@ public class Frag1_2 extends Fragment {
     private View view;
     private Context context;
     TextView titlepage, addtitle, adddesc, adddate;
-    EditText titledoes, datedoes, descdoes;
+    EditText titledoes, descdoes, datedoes;
     Button btnSaveTask, btnCancel;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     Integer doesNum = new Random().nextInt();
@@ -76,14 +76,14 @@ public class Frag1_2 extends Fragment {
 
         titlepage=view.findViewById(R.id.titlepage);
 
-        addtitle=view.findViewById(R.id.titlepage);
-        adddate = view.findViewById(R.id.adddate);
+        addtitle=view.findViewById(R.id.addtitle);
         adddesc = view.findViewById(R.id.adddesc);
+        adddate = view.findViewById(R.id.adddate);
 
 
         titledoes = view.findViewById(R.id.titledoes);
-        datedoes = view.findViewById(R.id.datedoes);
         descdoes = view.findViewById(R.id.descdoes);
+        datedoes = view.findViewById(R.id.datedoes);
 
 
         btnSaveTask = view.findViewById(R.id.btnSaveTask);
@@ -95,13 +95,14 @@ public class Frag1_2 extends Fragment {
             public void onClick( View view ) {
                 //insert data to database
                 final String titledata = titledoes.getText().toString();
-                final String datedata = datedoes.getText().toString();
                 final String descdata = descdoes.getText().toString();
+                final String datedata = datedoes.getText().toString();
+
                 String keydoes = UUID.randomUUID().toString(); //random id
                 Map<String, Object> todo = new HashMap<>();
                 todo.put("titledoes", titledata);
-                todo.put("datedoes", datedata);
                 todo.put("descdoes", descdata);
+                todo.put("datedoes", datedata);
                 todo.put("keydoes", keydoes);
 
                 db.collection("ToDoList").document(keydoes)
@@ -144,33 +145,4 @@ public class Frag1_2 extends Fragment {
 
         return view;
 }
-//    private void setData( String titledoes, String datedoes , String descdoes ) {
-//        //insert data to database
-//        String keydoes = UUID.randomUUID().toString(); //random id
-//        Map<String, Object> todo = new HashMap<>();
-//        todo.put("titledoes", titledoes);
-//        todo.put("datedoes", datedoes);
-//        todo.put("descdoes", descdoes);
-//        todo.put("keydoes", keydoes);
-//
-//        db.collection("ToDoList").document(keydoes)
-//                .set(todo)
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess( Void aVoid ) {
-//                        Log.d(TAG, "DocumentSnapshot successfully written!");
-//                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-//                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                        fragmentTransaction.replace(R.id.main_frame, new Frag1_1());
-//                        fragmentTransaction.commit();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure( @NonNull Exception e ) {
-//                        Log.w(TAG, "Error writing document", e);
-//                    }
-//                });
-//        }
-
 }

@@ -2,17 +2,17 @@ package com.example.android_smore.Model;
 
 public class ToDoModel {
     private String titledoes;
-    private String datedoes;
     private String descdoes;
+    private String datedoes;
     private String keydoes;
 
     public ToDoModel() {
     }
 
-    public ToDoModel(String titledoes, String datedoes, String descdoes, String keydoes) {
+    public ToDoModel(String titledoes, String descdoes, String datedoes,  String keydoes) {
         this.titledoes = titledoes;
-        this.datedoes = datedoes;
         this.descdoes = descdoes;
+        this.datedoes = datedoes;
         this.keydoes = keydoes;
     }
 
@@ -32,6 +32,14 @@ public class ToDoModel {
         this.titledoes = titledoes;
     }
 
+    public String getDescdoes() {
+        return descdoes;
+    }
+
+    public void setDescdoes(String descdoes) {
+        this.descdoes = descdoes;
+    }
+
     public String getDatedoes() {
         return datedoes;
     }
@@ -40,11 +48,5 @@ public class ToDoModel {
         this.datedoes = datedoes;
     }
 
-    public String getDescdoes() {
-        return descdoes;
-    }
 
-    public void setDescdoes(String descdoes) {
-        this.descdoes = descdoes;
-    }
 }
